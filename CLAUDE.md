@@ -62,7 +62,8 @@ Stack (Details und Begründung: `SPEC.md`, Abschnitt 12a):
 Ordnerstruktur:
 - `inhalte/` – Lehrplan-Inhalte als YAML (Lernbereiche, Level, Bausteine, Voraussetzungen, Fehlertypen); `inhalte/UEBERSICHT.md` wird erzeugt
 - `src/mathe/` – Mathe-Kern (exakte Brüche, deterministischer Zufall, später Terme/Gleichungen); keine Abhängigkeit von Oberfläche oder Datenbank
-- `src/generatoren/` – Aufgabengeneratoren (folgt), je Generator eine Testdatei daneben
+- `src/generatoren/` – Aufgabengeneratoren, je Generator eine Testdatei daneben; neue Generatoren in `src/generatoren/index.ts` eintragen
+- `beispiele/` – erzeugte Beispielaufgaben je Generator zur Sichtprüfung durch Timon
 - `werkzeuge/` – Hilfsskripte (Inhalte prüfen, Übersicht erzeugen; vorerst Python)
 - `.github/workflows/` – automatische Tests bei jedem Push
 
@@ -70,9 +71,11 @@ Befehle:
 - `npm test` – alle Tests einmal ausführen
 - `npm run test:watch` – Tests bei jeder Änderung neu ausführen
 - `npm run typecheck` – TypeScript-Prüfung
+- `npm run beispiele` – Beispielaufgaben in `beispiele/` neu erzeugen (nach jeder Generator-Änderung)
 - `python3 werkzeuge/inhalte_pruefen.py` – Inhaltsdateien auf Konsistenz prüfen
 - `python3 werkzeuge/uebersicht_erzeugen.py` – `inhalte/UEBERSICHT.md` neu erzeugen (nach jeder Inhaltsänderung)
 
 Regeln für den Mathe-Kern:
 - Zahlen in Lösungen immer als `Bruch` (src/mathe/bruch.ts), nie als `number`-Gleitkomma.
+- Terme über `Polynom` (src/mathe/polynom.ts); Schülereingaben über `leseTerm`/`leseAlsPolynom` (src/mathe/term-parser.ts).
 - Zufall nur über `Zufall` (src/mathe/zufall.ts) mit Seed. Der Algorithmus darf sich nicht ändern (Referenztest), sonst lassen sich alte Versuche nicht mehr rekonstruieren.

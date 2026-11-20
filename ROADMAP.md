@@ -30,6 +30,14 @@ Ergebnis: `inhalte/`, Übersicht in `inhalte/UEBERSICHT.md`.
 **Abnahme:** Timon bestätigt Bausteine und Netz fachlich („So würde ich das auch zerlegen“).
 
 ## M2 – Mathe-Kern und Generatoren *(in Arbeit, ca. 3–4 Wochen, größter Block)*
+
+Stand:
+- [x] Projektgerüst, automatische Tests (GitHub Actions)
+- [x] Exakte Bruchrechnung, deterministischer Zufall
+- [x] Terme (Polynome), Einlesen von Schülereingaben, Formprüfung
+- [x] Generator-Schnittstelle, Beispielausgabe
+- [x] Generator 1/26: `t8-ausmultiplizieren-monom` (wartet auf Sichtprüfung durch Timon)
+- [ ] weitere Generatoren
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige
 - Generator-Schnittstelle (Seed, Lösung, Antwortprüfung, Fehlerdiagnose, Hilfen)

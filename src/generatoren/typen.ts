@@ -1,0 +1,91 @@
+/**
+ * Gemeinsame Typen aller Aufgabengeneratoren (SPEC Abschnitt 5).
+ */
+
+export type AFB = 'I' | 'II' | 'III';
+export type Darstellung = 'symbolisch' | 'grafisch' | 'tabelle' | 'text';
+export type Aufgabentyp = 'eingabe' | 'auswahl' | 'zuordnen' | 'ordnen' | 'fehler-finden' | 'schaetzen' | 'graph';
+
+/** Codes aus inhalte/fehlertypen.yaml (Version 1). */
+export type FehlertypCode = 'VZ' | 'KL' | 'ZF' | 'VR' | 'BR' | 'PO' | 'UM' | 'EH' | 'DA' | 'TV' | 'RE' | 'UK';
+
+/** Eine Formel in zwei Formen: Text (Tests, Barrierefreiheit) und LaTeX (Anzeige mit KaTeX). */
+export interface Formel {
+  readonly text: string;
+  readonly latex: string;
+}
+
+export interface Bewertung {
+  /**
+   * richtig        – Wert und geforderte Form stimmen
+   * unvollstaendig – Wert stimmt, aber Form nicht (z. B. noch nicht zusammengefasst);
+   *                  zählt nicht als Fehler, Schüler darf weiterrechnen
+   * falsch         – Wert stimmt nicht
+   * unlesbar       – Eingabe ist kein gültiger Term; zählt nicht als Versuch
+   */
+  readonly ergebnis: 'richtig' | 'unvollstaendig' | 'falsch' | 'unlesbar';
+  readonly fehlertyp?: FehlertypCode;
+  readonly rueckmeldung: string;
+}
+
+export interface Auswahloption {
+  readonly formel: Formel;
+  readonly richtig: boolean;
+  /** Bei falschen Optionen: der Fehler, der genau diese Antwort erzeugt. */
+  readonly fehlertyp?: FehlertypCode;
+}
+
+export interface Hilfen {
+  /** Stufe 1: Hinweis ohne Rechnung */
+  readonly denkanstoss: string;
+  /** Stufe 2: erster Schritt vorgemacht */
+  readonly ansatz: Formel;
+  /** Stufe 3: vollständiger Lösungsweg, Zeile für Zeile; letzte Zeile endet mit der Lösung */
+  readonly loesungsweg: readonly Formel[];
+}
+
+export interface Aufgabe {
+  readonly generator: string;
+  readonly version: number;
+  readonly seed: number;
+  readonly baustein: string;
+  readonly afb: AFB;
+  readonly darstellung: Darstellung;
+  readonly typ: Aufgabentyp;
+  readonly ohneHilfsmittel: boolean;
+  /** Arbeitsauftrag, z. B. „Multipliziere aus.“ */
+  readonly anweisung: string;
+  /** Der Term / die Gleichung der Aufgabe. */
+  readonly aufgabe: Formel;
+  readonly loesung: Formel;
+  readonly hilfen: Hilfen;
+  /** Nur bei typ 'auswahl': Optionen in Anzeigereihenfolge. */
+  readonly optionen?: readonly Auswahloption[];
+  /**
+   * Prüft eine Antwort. Bei 'eingabe' die Schülereingabe als Text,
+   * bei 'auswahl' der Index der gewählten Option als Text ("0", "1", …).
+   */
+  pruefe(antwort: string): Bewertung;
+}
+
+export interface Wunsch {
+  readonly afb?: AFB;
+  readonly typ?: Aufgabentyp;
+}
+
+export interface Generator {
+  readonly id: string;
+  /** Steigt bei jeder inhaltlichen Änderung; alte Versuche bleiben über (id, version, seed) reproduzierbar. */
+  readonly version: number;
+  readonly baustein: string;
+  readonly afb: readonly AFB[];
+  readonly darstellungen: readonly Darstellung[];
+  readonly typen: readonly Aufgabentyp[];
+  readonly ohneHilfsmittel: boolean;
+  erzeuge(seed: number, wunsch?: Wunsch): Aufgabe;
+}
+
+export class GeneratorFehler extends Error {}
+
+/** Malpunkt-Schreibweise wie im sächsischen Lehrplan (3·x·y). Zentral umschaltbar. */
+export const ANZEIGE = { malpunkt: true } as const;
