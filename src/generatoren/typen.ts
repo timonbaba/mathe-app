@@ -9,11 +9,8 @@ export type Aufgabentyp = 'eingabe' | 'auswahl' | 'zuordnen' | 'ordnen' | 'fehle
 /** Codes aus inhalte/fehlertypen.yaml (Version 1). */
 export type FehlertypCode = 'VZ' | 'KL' | 'ZF' | 'VR' | 'BR' | 'PO' | 'UM' | 'EH' | 'DA' | 'TV' | 'RE' | 'UK';
 
-/** Eine Formel in zwei Formen: Text (Tests, Barrierefreiheit) und LaTeX (Anzeige mit KaTeX). */
-export interface Formel {
-  readonly text: string;
-  readonly latex: string;
-}
+import type { Formel } from '../mathe/formel';
+export type { Formel };
 
 export interface Bewertung {
   /**

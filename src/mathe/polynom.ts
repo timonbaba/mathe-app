@@ -69,7 +69,7 @@ export class Polynom {
   }
 
   static variable(name: string, exponent = 1): Polynom {
-    if (!/^[a-z]$/.test(name)) throw new RangeError(`Ungültiger Variablenname: ${name}`);
+    if (!/^[a-zA-Zρπ]$/.test(name)) throw new RangeError(`Ungültiger Variablenname: ${name}`);
     return Polynom.glied(1, { [name]: exponent });
   }
 

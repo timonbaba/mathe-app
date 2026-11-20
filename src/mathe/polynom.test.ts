@@ -88,7 +88,7 @@ describe('Term-Parser: Eingaben', () => {
     expect(P(eingabe).alsText()).toBe(erwartet);
   });
 
-  it.each(['', '3+', '(x+1', 'x+1)', '3x2', 'x/y', 'x/0', '3 # 4', 'X', 'x^y', 'x^-1', '2..3'])(
+  it.each(['', '3+', '(x+1', 'x+1)', '3x2', 'x/y', 'x/0', '3 # 4', 'ä', 'x^y', 'x^-1', '2..3'])(
     'lehnt ungültige Eingabe ab: "%s"',
     (eingabe) => {
       expect(leseAlsPolynom(eingabe)).toBeNull();

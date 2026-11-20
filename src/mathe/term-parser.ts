@@ -3,13 +3,14 @@
  *
  * Unterstützt:
  *  - Zahlen: 3, 0,5, 0.5
- *  - Variablen: einzelne Kleinbuchstaben (x, y, a, b …)
+ *  - Variablen: einzelne Buchstaben (x, y, a, b, A, V …) sowie ρ und π (als Formelzeichen)
  *  - + − (auch typografisches Minus), Malzeichen * · × ⋅, Division /
  *  - Potenzen: x^2, x², x³
  *  - Klammern ( )
  *  - weggelassener Malpunkt: 3x, 2(x+1), (x+1)(x−1), xy
  *
- * Division ist nur durch Zahlen erlaubt (Bruchterme folgen später).
+ * Der Syntaxbaum erlaubt Division durch beliebige Terme (Bruchterme); die Umwandlung
+ * in ein Polynom (alsPolynom) nur Division durch Zahlen.
  *
  * Ergebnis ist ein Syntaxbaum (für die Formprüfung, z. B. „noch Klammern übrig?“)
  * und daraus ein Polynom (für die Wertprüfung).
@@ -52,7 +53,7 @@ function zerlege(eingabe: string): Token[] {
       i += zahl[0].length;
       continue;
     }
-    if (/[a-z]/.test(c)) { tokens.push({ t: 'var', name: c }); i++; continue; }
+    if (/[a-zA-Zρπ]/.test(c)) { tokens.push({ t: 'var', name: c }); i++; continue; }
     if ('+-*/^()'.includes(c)) { tokens.push({ t: 'op', op: c as '+' }); i++; continue; }
     if (c in HOCHZAHLEN) {
       let ziffern = '';
