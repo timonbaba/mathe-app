@@ -1,7 +1,7 @@
 # Übersicht: Gym Kl. 8 – „Arbeiten mit Termen und Gleichungen“
 
 > Automatisch aus den Dateien in `inhalte/` erzeugt – bitte nicht von Hand bearbeiten.
-> Status: **Entwurf zur fachlichen Prüfung durch Timon** (Meilenstein M1).
+> Status: **fachlich geprüft**
 
 Lehrplan: Gymnasium Mathematik, Kl. 8, LB 1 (24 Ustd.), S. 20.
 
@@ -61,7 +61,7 @@ AFB = Anforderungsbereich · oH = ohne Hilfsmittel · Darstellung: sym = symboli
 | Baustein | Inhalt | AFB | oH | Darstellung | Fehlertypen | braucht |
 |---|---|---|---|---|---|---|
 | Bruchterme multiplizieren und kürzen | Produkte von Bruchtermen mit Produkten im Zähler/Nenner vereinfachen (Typ 3/(8x) · x²/9). | II | ja | sym | BR, PO | **Brüche multiplizieren und dividieren**, Terme mit mehreren Variablen zusammenfassen |
-| Bruchterme durch Faktorisieren kürzen | Zähler/Nenner erst faktorisieren, dann kürzen (Typ (x³ + x²)/x², (a² − b²)/(a − b)); typischer Fehler „aus Summen kürzen“. | III | ja | sym | BR, PO, KL | **Ausklammern (Faktorisieren mit dem Distributivgesetz)**, **Binomische Formeln: Faktorisieren**, Bruchterme multiplizieren und kürzen |
+| Bruchterme durch Faktorisieren kürzen | Zähler/Nenner erst faktorisieren, dann kürzen (Typ (x³ + x²)/x², (a² − b²)/(a − b)); typischer Fehler „aus Summen kürzen“. Ausgeschlossene Werte nur als Hinweis, nicht bewertet. | III | ja | sym | BR, PO, KL | **Ausklammern (Faktorisieren mit dem Distributivgesetz)**, **Binomische Formeln: Faktorisieren**, Bruchterme multiplizieren und kürzen |
 
 ### Level 7: Lineare Gleichungen
 
@@ -70,7 +70,7 @@ AFB = Anforderungsbereich · oH = ohne Hilfsmittel · Darstellung: sym = symboli
 | Lineare Gleichungen mit Klammern lösen | Erst Klammern auflösen, dann umformen (Typ −3·(x + 0,2) = x + 1,8; 3 − (x + 4) = 5x). | I/II | ja | sym | UM, KL, VZ, ZF | **Lineare Gleichungen in wenigen Schritten lösen**, **Produkt mal Klammer ausmultiplizieren** |
 | Lineare Gleichungen mit Brüchen lösen | Bruchzahlen als Koeffizienten, z. B. durch Multiplizieren mit dem Hauptnenner (Typ 0 = −½x + 3/5). | I/II/III | ja | sym | UM, BR, VZ | **Lineare Gleichungen in wenigen Schritten lösen**, **Brüche addieren und subtrahieren**, **Brüche multiplizieren und dividieren** |
 | Gleichungen mit Summe mal Summe (x² fällt weg) | Ausmultiplizieren, x²-Glieder heben sich auf, Rest linear (Typ (3x − 2)·(x + 5) − 3x² = 7). | II | ja | sym | KL, UM, VZ, PO | **Summe mal Summe**, **Lineare Gleichungen mit Klammern lösen** |
-| Keine Lösung oder unendlich viele Lösungen | Erkennen und korrekt notieren: L = { } bzw. L = ℚ (bzw. Grundmenge). (?) | II/III | ja | sym | UM | **Lineare Gleichungen mit Klammern lösen** |
+| Keine Lösung oder unendlich viele Lösungen | Erkennen und korrekt notieren: L = { } (auch ∅) bzw. L = ℚ. | II/III | ja | sym | UM | **Lineare Gleichungen mit Klammern lösen** |
 
 ### Level 8: Gleichungen aus dem Alltag
 
@@ -89,7 +89,7 @@ AFB = Anforderungsbereich · oH = ohne Hilfsmittel · Darstellung: sym = symboli
 
 | Baustein | Inhalt | AFB | oH | Darstellung | Fehlertypen | braucht |
 |---|---|---|---|---|---|---|
-| Einfache Bruchgleichungen lösen | Variable im Nenner, Quadrate entfallen beim Umformen (Typ 5/(a − 1) = 3/a); Werte ausschließen, für die ein Nenner null wird. (?) | II/III | ja | sym | UM, BR, KL | **Einfache Gleichungen mit der Variablen im Nenner**, **Lineare Gleichungen mit Klammern lösen** |
+| Einfache Bruchgleichungen lösen | Variable im Nenner, Quadrate entfallen beim Umformen (Typ 5/(a − 1) = 3/a); Werte, für die ein Nenner null wird, müssen angegeben werden und zählen zur Bewertung. | II/III | ja | sym | UM, BR, KL | **Einfache Gleichungen mit der Variablen im Nenner**, **Lineare Gleichungen mit Klammern lösen** |
 
 ### Level 11: Formeln umstellen
 
@@ -105,11 +105,11 @@ AFB = Anforderungsbereich · oH = ohne Hilfsmittel · Darstellung: sym = symboli
 
 ### Level 13: Mit dem CAS arbeiten *(kennen)*
 
-> Offene Frage an Timon: als Level in der App oder nur im Unterricht/in der Nachhilfe?
+> Nur CAS-Ergebnisse lesen und prüfen, keine Gerätebedienung. Nie im hilfsmittelfreien Teil der Probe-Arbeit.
 
 | Baustein | Inhalt | AFB | oH | Darstellung | Fehlertypen | braucht |
 |---|---|---|---|---|---|---|
-| CAS-Ergebnisse lesen und prüfen (?) | Ausgaben eines CAS zu komplexeren Termen/Gleichungen deuten, mit eigener Rechnung oder Probe vergleichen, gleichwertige Darstellungen erkennen. Die Bedienung eines konkreten CAS übt die App nicht. | I/II | nein | sym | DA, UK | **Prüfen, ob zwei Terme gleichwertig sind** |
+| CAS-Ergebnisse lesen und prüfen | Ausgaben eines CAS zu komplexeren Termen/Gleichungen deuten, mit eigener Rechnung oder Probe vergleichen, gleichwertige Darstellungen erkennen. Die Bedienung eines konkreten CAS übt die App nicht. Nie im hilfsmittelfreien Teil einer Probe-Arbeit. | I/II | nein | sym | DA, UK | **Prüfen, ob zwei Terme gleichwertig sind** |
 
 **fett** = notwendige Voraussetzung, normal = hilfreich.
 
@@ -162,7 +162,7 @@ flowchart LR
   n22["Einfache Bruchgleichungen lösen"]
   n23["Formeln umstellen"]
   n24["Lineare Ungleichungen lösen (Einblick)"]
-  n25["CAS-Ergebnisse lesen und prüfen (?)"]
+  n25["CAS-Ergebnisse lesen und prüfen"]
   n26["Rechenreihenfolge beachten"]
   n27["Brüche kürzen und erweitern"]
   n28["Brüche addieren und subtrahieren"]

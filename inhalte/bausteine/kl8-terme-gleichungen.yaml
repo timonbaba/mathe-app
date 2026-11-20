@@ -4,7 +4,7 @@
 #   status         entwurf | geprueft (geprueft = von Timon fachlich abgenommen)
 #
 # AFB-Einstufung orientiert sich an der Interpretationshilfe (ih-terme-gleichungen S. 5).
-# Mit (?) markierte Punkte sind Fragen an Timon (siehe inhalte/UEBERSICHT.md).
+# Fachlich abgenommen von Timon am 20.11.2026.
 
 bausteine:
 
@@ -22,7 +22,7 @@ bausteine:
     darstellungen: [symbolisch, grafisch]
     fehlertypen: [VR]
     voraussetzungen: [[v5-vorrang, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-term-text:
     titel: "Terme in Worte fassen und aus Worten aufstellen"
@@ -36,7 +36,7 @@ bausteine:
     darstellungen: [text, symbolisch]
     fehlertypen: [TV, VR, KL]
     voraussetzungen: [[t8-term-struktur, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-termwert:
     titel: "Werte in Terme einsetzen"
@@ -51,7 +51,7 @@ bausteine:
       - [v7-rational-multiplizieren, notwendig]
       - [v7-potenz-wurzel, notwendig]
       - [v6-bruch-addieren, hilfreich]
-    status: entwurf
+    status: geprueft
 
   t8-term-gleichwertig:
     titel: "Prüfen, ob zwei Terme gleichwertig sind"
@@ -63,7 +63,7 @@ bausteine:
     darstellungen: [symbolisch, tabelle]
     fehlertypen: [KL, ZF, PO, VZ]
     voraussetzungen: [[t8-termwert, notwendig], [t8-ausmultiplizieren-monom, hilfreich]]
-    status: entwurf
+    status: geprueft
 
   # --- Terme umformen ------------------------------------------------------
 
@@ -77,7 +77,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [ZF, VZ, PO]
     voraussetzungen: [[v7-term-zusammenfassen, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-ausmultiplizieren-monom:
     titel: "Produkt mal Klammer ausmultiplizieren"
@@ -91,7 +91,7 @@ bausteine:
     darstellungen: [symbolisch, grafisch]
     fehlertypen: [KL, VZ, PO]
     voraussetzungen: [[v7-zahl-mal-summe, notwendig], [t8-zusammenfassen, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-summe-mal-summe:
     titel: "Summe mal Summe"
@@ -103,7 +103,7 @@ bausteine:
     darstellungen: [symbolisch, grafisch]
     fehlertypen: [KL, VZ, ZF, PO]
     voraussetzungen: [[t8-ausmultiplizieren-monom, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-klammern-verschachtelt:
     titel: "Mehrere und verschachtelte Klammern auflösen"
@@ -117,7 +117,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [KL, VZ, ZF, VR]
     voraussetzungen: [[t8-ausmultiplizieren-monom, notwendig], [t8-summe-mal-summe, hilfreich]]
-    status: entwurf
+    status: geprueft
 
   t8-ausklammern:
     titel: "Ausklammern (Faktorisieren mit dem Distributivgesetz)"
@@ -129,7 +129,7 @@ bausteine:
     darstellungen: [symbolisch, grafisch]
     fehlertypen: [KL, PO, VZ]
     voraussetzungen: [[t8-ausmultiplizieren-monom, notwendig]]
-    status: entwurf
+    status: geprueft
 
   # --- Binomische Formeln --------------------------------------------------
 
@@ -145,7 +145,7 @@ bausteine:
     darstellungen: [symbolisch, grafisch]
     fehlertypen: [PO, VZ, KL]
     voraussetzungen: [[t8-summe-mal-summe, notwendig], [v7-potenz-wurzel, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-binom-geometrie:
     titel: "Binomische Formeln am Quadrat verstehen"
@@ -157,7 +157,7 @@ bausteine:
     darstellungen: [grafisch, symbolisch]
     fehlertypen: [PO, DA]
     voraussetzungen: [[t8-summe-mal-summe, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-binom-ergaenzen:
     titel: "Binomische Formeln: Lücken ergänzen"
@@ -169,7 +169,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [PO, VZ]
     voraussetzungen: [[t8-binom-ausmultiplizieren, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-binom-faktorisieren:
     titel: "Binomische Formeln: Faktorisieren"
@@ -181,7 +181,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [PO, VZ, KL]
     voraussetzungen: [[t8-binom-ergaenzen, notwendig], [t8-ausklammern, hilfreich]]
-    status: entwurf
+    status: geprueft
 
   # --- Bruchterme ----------------------------------------------------------
 
@@ -195,13 +195,13 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [BR, PO]
     voraussetzungen: [[v6-bruch-multiplizieren, notwendig], [t8-zusammenfassen, hilfreich]]
-    status: entwurf
+    status: geprueft
 
   t8-bruchterm-faktorisieren-kuerzen:
     titel: "Bruchterme durch Faktorisieren kürzen"
     beschreibung: >
       Zähler/Nenner erst faktorisieren, dann kürzen (Typ (x³ + x²)/x², (a² − b²)/(a − b));
-      typischer Fehler „aus Summen kürzen“.
+      typischer Fehler „aus Summen kürzen“. Ausgeschlossene Werte nur als Hinweis, nicht bewertet.
     klasse: 8
     quelle: [ih-terme-gleichungen S. 5 (AB III)]
     afb: [III]
@@ -212,7 +212,7 @@ bausteine:
       - [t8-ausklammern, notwendig]
       - [t8-binom-faktorisieren, notwendig]
       - [t8-bruchterm-multiplizieren, hilfreich]
-    status: entwurf
+    status: geprueft
 
   # --- Gleichungen ---------------------------------------------------------
 
@@ -226,7 +226,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [UM, KL, VZ, ZF]
     voraussetzungen: [[v7-gleichung-linear, notwendig], [t8-ausmultiplizieren-monom, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-gleichung-brueche:
     titel: "Lineare Gleichungen mit Brüchen lösen"
@@ -238,7 +238,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [UM, BR, VZ]
     voraussetzungen: [[v7-gleichung-linear, notwendig], [v6-bruch-addieren, notwendig], [v6-bruch-multiplizieren, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-gleichung-summe-mal-summe:
     titel: "Gleichungen mit Summe mal Summe (x² fällt weg)"
@@ -250,11 +250,11 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [KL, UM, VZ, PO]
     voraussetzungen: [[t8-summe-mal-summe, notwendig], [t8-gleichung-klammern, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-gleichung-sonderfaelle:
     titel: "Keine Lösung oder unendlich viele Lösungen"
-    beschreibung: "Erkennen und korrekt notieren: L = { } bzw. L = ℚ (bzw. Grundmenge). (?)"
+    beschreibung: "Erkennen und korrekt notieren: L = { } (auch ∅) bzw. L = ℚ."
     klasse: 8
     quelle: [lp-gy-2021 S. 20 (Kl. 8, LB 1)]
     afb: [II, III]
@@ -262,7 +262,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [UM]
     voraussetzungen: [[t8-gleichung-klammern, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-gleichung-aufstellen:
     titel: "Gleichungen aus Sachaufgaben aufstellen und lösen"
@@ -274,7 +274,7 @@ bausteine:
     darstellungen: [text]
     fehlertypen: [TV, UM, EH]
     voraussetzungen: [[t8-term-text, notwendig], [t8-gleichung-klammern, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-nullprodukt:
     titel: "Produktgleichungen lösen (Produkt = 0)"
@@ -286,7 +286,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [UM, VZ]
     voraussetzungen: [[v7-gleichung-inhaltlich, notwendig], [v7-gleichung-linear, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-gleichung-ausklammern-null:
     titel: "Gleichungen durch Ausklammern lösen"
@@ -298,13 +298,13 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [UM, KL]
     voraussetzungen: [[t8-nullprodukt, notwendig], [t8-ausklammern, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-bruchgleichung:
     titel: "Einfache Bruchgleichungen lösen"
     beschreibung: >
       Variable im Nenner, Quadrate entfallen beim Umformen (Typ 5/(a − 1) = 3/a);
-      Werte ausschließen, für die ein Nenner null wird. (?)
+      Werte, für die ein Nenner null wird, müssen angegeben werden und zählen zur Bewertung.
     klasse: 8
     quelle: [lp-gy-2021 S. 20 (Kl. 8, LB 1, CAS-Beispiel), ih-terme-gleichungen S. 5 („einfache Bruchgleichungen“, AB III)]
     afb: [II, III]
@@ -312,7 +312,7 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [UM, BR, KL]
     voraussetzungen: [[v7-gleichung-variable-im-nenner, notwendig], [t8-gleichung-klammern, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-formel-umstellen:
     titel: "Formeln umstellen"
@@ -324,7 +324,7 @@ bausteine:
     darstellungen: [symbolisch, text]
     fehlertypen: [UM, BR, KL]
     voraussetzungen: [[v7-formel-umstellen, notwendig], [t8-ausmultiplizieren-monom, hilfreich]]
-    status: entwurf
+    status: geprueft
 
   # --- Einblick / Kennen ---------------------------------------------------
 
@@ -338,14 +338,14 @@ bausteine:
     darstellungen: [symbolisch, grafisch]
     fehlertypen: [UM, VZ]
     voraussetzungen: [[v7-gleichung-linear, notwendig]]
-    status: entwurf
+    status: geprueft
 
   t8-cas-ergebnisse:
-    titel: "CAS-Ergebnisse lesen und prüfen (?)"
+    titel: "CAS-Ergebnisse lesen und prüfen"
     beschreibung: >
       Ausgaben eines CAS zu komplexeren Termen/Gleichungen deuten, mit eigener Rechnung oder
       Probe vergleichen, gleichwertige Darstellungen erkennen. Die Bedienung eines konkreten
-      CAS übt die App nicht.
+      CAS übt die App nicht. Nie im hilfsmittelfreien Teil einer Probe-Arbeit.
     klasse: 8
     quelle: [lp-gy-2021 S. 20 (Kl. 8, LB 1, „Kennen der Verwendung von CAS …“)]
     afb: [I, II]
@@ -353,4 +353,4 @@ bausteine:
     darstellungen: [symbolisch]
     fehlertypen: [DA, UK]
     voraussetzungen: [[t8-term-gleichwertig, notwendig]]
-    status: entwurf
+    status: geprueft

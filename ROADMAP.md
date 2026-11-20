@@ -16,9 +16,9 @@ Zeitangaben sind grobe Schätzungen bei einigen Stunden Arbeit pro Woche.
 
 **Abnahme:** SPEC freigegeben, offene Punkte entschieden oder bewusst vertagt.
 
-## M1 – Inhaltsgerüst des Pilot-Lernbereichs *(in Arbeit)*
+## M1 – Inhaltsgerüst des Pilot-Lernbereichs *(erledigt, abgenommen 20.11.2026)*
 
-Stand: Entwurf liegt vor (`inhalte/`, Übersicht in `inhalte/UEBERSICHT.md`), wartet auf fachliche Prüfung durch Timon.
+Ergebnis: `inhalte/`, Übersicht in `inhalte/UEBERSICHT.md`.
 
 - Lehrplan-PDF Gym Kl. 8 (und Kl. 5–7 für Voraussetzungen) auswerten
 - Lernbereich „Terme und Gleichungen“ als Datei: Lernziele mit Lehrplan-Verweis
@@ -29,7 +29,7 @@ Stand: Entwurf liegt vor (`inhalte/`, Übersicht in `inhalte/UEBERSICHT.md`), wa
 
 **Abnahme:** Timon bestätigt Bausteine und Netz fachlich („So würde ich das auch zerlegen“).
 
-## M2 – Mathe-Kern und Generatoren *(ca. 3–4 Wochen, größter Block)*
+## M2 – Mathe-Kern und Generatoren *(in Arbeit, ca. 3–4 Wochen, größter Block)*
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige
 - Generator-Schnittstelle (Seed, Lösung, Antwortprüfung, Fehlerdiagnose, Hilfen)
@@ -83,7 +83,7 @@ Stand: Entwurf liegt vor (`inhalte/`, Übersicht in `inhalte/UEBERSICHT.md`), wa
 
 ## M8 – Auswertung und zweiter Lernbereich
 - Auswertung des Pilots: Meisterungs-Kriterien und Fehlertypen nachschärfen
-- Zweiter Lernbereich Kl. 8 nach gleichem Muster (M1 → M2 → Einbindung)
+- Zweiter Lernbereich Kl. 8, LB 3 „Funktionen und lineare Gleichungssysteme“ nach gleichem Muster (M1 → M2 → Einbindung)
 - Entscheidung über Welle 1 (Gym Kl. 7–9)
 
 ---

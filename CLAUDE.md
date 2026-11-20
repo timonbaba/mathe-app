@@ -30,7 +30,7 @@ Die fachliche Beschreibung steht in `SPEC.md`, der Plan in `ROADMAP.md`.
    - Exakt rechnen: Brüche als rationale Zahlen (Zähler/Nenner), **niemals Gleitkommazahlen zum Prüfen von Lösungen**.
    - Jede generierte Aufgabe hat eine eindeutige, vollständige Lösung (bzw. Lösungsmenge, inkl. „keine Lösung“ / „unendlich viele Lösungen“, wo didaktisch gewollt).
    - Generatoren **verwerfen ungeeignete Zufallswerte** (z. B. Division durch 0, unbeabsichtigt triviale Aufgaben, unschöne Zahlen außerhalb des vorgesehenen Bereichs), statt sie durchzulassen.
-   - Notation wie im sächsischen Schulunterricht: Dezimalkomma, Malpunkt `·`, Lösungsmenge `L = { … }`, Fachbegriffe wie im Lehrplan.
+   - Notation wie im sächsischen Schulunterricht: Dezimalkomma, Malpunkt `·`, Lösungsmenge `L = { … }`, Fachbegriffe wie im Lehrplan. Details und Sonderfälle: `SPEC.md` Abschnitt 5.5.
 3. **Tests für jeden Aufgabengenerator** (Pflicht, ohne Tests kein Merge). Mindestens:
    - **Determinismus:** gleicher Seed → identische Aufgabe.
    - **Korrektheit:** Lösung wird unabhängig vom Generator geprüft (z. B. Einsetzen in die Gleichung; Termgleichheit durch exakte Auswertung an mehreren Stellen).

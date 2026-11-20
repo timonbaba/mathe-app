@@ -9,6 +9,8 @@
 #   ohne_hm         hilfsmittelfrei zu beherrschen (laut Interpretationshilfe)
 #   fehlertypen     typische Fehlertypen (für Diagnose und Reparatur-Zuordnung)
 #   voraussetzungen [id, art]  art: notwendig | hilfreich
+#
+# Fachlich abgenommen von Timon am 20.11.2026.
 
 bausteine:
 

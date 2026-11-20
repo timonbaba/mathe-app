@@ -1,6 +1,6 @@
 # SPEC – Mathe-Lern-App (Arbeitstitel)
 
-Stand: 20.11.2026 · Version 1.0 (freigegeben durch Timon am 20.11.2026)
+Stand: 20.11.2026 · Version 1.1 (v1.0 freigegeben am 20.11.2026; Änderungen siehe Abschnitt 14)
 
 Hinweise (Markierungen „[fest]“ kennzeichnen Vorgaben aus Timons ursprünglichem Projektbriefing):
 - Alle Festlegungen in diesem Dokument sind freigegeben. Zahlenwerte bei Meisterung, Sternen, Fehlereinordnung und Test-Einschätzung sind **Startwerte** und werden nach dem Pilot anhand echter Daten überprüft (Abschnitt 14).
@@ -29,8 +29,9 @@ Die App ist ein **ergänzendes Feature der 1:1-Nachhilfe** („Mathebegleitung�
 | **Klassenstufe** | 5–12; bestimmt zusammen mit Schulart den Lehrplan. |
 | **Schulart / Bildungsgang** | Gymnasium; Oberschule (Kl. 5–6 ohne, ab Kl. 7 Hauptschul- oder Realschulbildungsgang); Gymnasiale Oberstufe (Kl. 11–12, Grund- oder Leistungskurs). |
 | **Lernbereich (LB)** | Abschnitt des Lehrplans einer Klassenstufe. Im Spiel: eine **Welt**. |
-| **Lernziel (LZ)** | Ziel innerhalb eines Lernbereichs laut Lehrplan. Im Spiel: ein **Level**. |
-| **Baustein** | Kleinste übbare Kompetenz (z. B. „Summe mit Zahl multiplizieren“). Ein Lernziel besteht aus mehreren Bausteinen. |
+| **Lernziel (LZ)** | Ziel innerhalb eines Lernbereichs genau wie im Lehrplan (z. B. „Beherrschen des Umgangs mit Variablen und Termen …“). Dient als Lehrplan-Bezug für Tutor und Berichte. |
+| **Level** | Spielbare Einheit innerhalb einer Welt; gehört zu genau einem Lernziel und bündelt 1–4 Bausteine. Lernziele des Lehrplans sind oft zu groß für ein Level und werden daher in mehrere Level aufgeteilt. |
+| **Baustein** | Kleinste übbare Kompetenz (z. B. „Summe mit Zahl multiplizieren“). Ein Level besteht aus einem oder mehreren Bausteinen. |
 | **Voraussetzungs-Netz** | Gerichtete Verknüpfung „Baustein A wird für Baustein B gebraucht“, auch über Klassenstufen hinweg. |
 | **Reparatur-Level** | Automatisch vorgeschlagene Übung zu einem Voraussetzungs-Baustein (oft aus früherer Klassenstufe), wenn eine Lücke erkannt wird. |
 | **Geheimes Level** | Freischaltbares Zusatz-Level (Knobeln, AFB III, Vorgriff). Nie testrelevant. |
@@ -67,12 +68,13 @@ Die App ist ein **ergänzendes Feature der 1:1-Nachhilfe** („Mathebegleitung�
 ```
 Schulart/Bildungsgang + Klassenstufe
  └─ Lernbereich (Welt)
-     └─ Lernziel (Level)
-         └─ Baustein (kleinste übbare Einheit)
-             └─ Generator(en)
+     └─ Lernziel (wie im Lehrplan)
+         └─ Level (spielbare Einheit)
+             └─ Baustein (kleinste übbare Einheit)
+                 └─ Generator(en)
 ```
 
-- Ein Baustein kann **mehreren Lernzielen** zugeordnet sein (z. B. „Bruch kürzen“).
+- Innerhalb einer Welt gehört jeder Baustein zu genau einem Level; über Welten hinweg kann derselbe Baustein mehrfach vorkommen (z. B. „Bruch kürzen“).
 - Bausteine sind **schulart-übergreifend** nutzbar: Gymnasium und Oberschule teilen sich Bausteine, wo der Inhalt gleich ist; Lernbereiche/Lernziele sind dagegen pro Lehrplan eigen.
 - Jeder Lernbereich und jedes Lernziel verweist auf die genaue Lehrplan-Stelle (Lehrplan, Fassung, Klassenstufe, Lernbereich-Nr.).
 
@@ -92,7 +94,7 @@ Schulart/Bildungsgang + Klassenstufe
 
 ### 4.4 Geheime Level [fest]
 
-- Freischaltung: Lernziel **ohne Hilfen** gemeistert (genaue Bedingung hängt an der Meisterungs-Definition, Abschnitt 6).
+- Freischaltung: Level **ohne Hilfen** gemeistert (genaue Bedingung hängt an der Meisterungs-Definition, Abschnitt 6).
 - Inhalt: Knobelaufgaben, AFB III, Vorgriff auf das nächste Thema.
 - **Nichts darin ist testrelevant**; geheime Level fließen nicht in die Test-Einschätzung ein.
 
@@ -159,6 +161,13 @@ Generator-Versionen: Ändert sich ein Generator inhaltlich, steigt die Version; 
 - Nach einem falschen Versuch wird automatisch Stufe 1 angeboten, nicht aufgedrängt.
 - Nach Stufe 3 folgt eine **ähnliche neue Aufgabe** (gleicher Generator, neuer Seed), damit der Schüler es selbst schafft.
 
+### 5.5 Schreibweisen und Sonderregeln
+
+- Lösungsmengen: `L = { … }`; keine Lösung: `L = { }` (Eingabe `∅` wird ebenfalls akzeptiert); unendlich viele Lösungen in Kl. 8: `L = ℚ`.
+- **Bruchgleichungen:** Die Werte, für die ein Nenner null wird, müssen angegeben werden (z. B. „a ≠ 0, a ≠ 1“); sie gehören zur Bewertung.
+- **Bruchterme:** Ausgeschlossene Werte werden als Hinweis gezeigt, aber nicht bewertet.
+- **CAS:** Die App übt keine Bedienung eines bestimmten CAS, sondern das Lesen und Prüfen von CAS-Ergebnissen. Diese Aufgaben kommen nie im Teil ohne Hilfsmittel einer Probe-Arbeit vor.
+
 ---
 
 ## 6. Meisterung und Bewertung
@@ -184,9 +193,10 @@ Bewertung nach **Meisterung statt „bestanden“**. [fest] Die folgenden Kriter
 | **gemeistert** | „sicher“ **und** an einem späteren Tag (≥ 2 Tage Abstand) erneut 3 von 3 richtig ohne Hilfe |
 
 - **Auffrischen:** Wird ein gemeisterter Baustein länger als ca. 4 Wochen nicht geübt oder treten neue systematische Fehler auf, fällt er auf „sicher“ zurück und wird in Wiederholungen eingeplant. (Kein Verlust von Sternen oder Belohnungen.)
-- **Lernziel (Level) gemeistert:** alle zugehörigen Bausteine gemeistert.
-- **Lernbereich (Welt) gemeistert:** alle Lernziele gemeistert.
-- **Geheimes Level frei:** Lernziel gemeistert und die Bestätigungs-Runde ohne jede Hilfe.
+- **Level gemeistert:** alle zugehörigen Bausteine gemeistert.
+- **Lernziel gemeistert:** alle zugehörigen Level gemeistert.
+- **Lernbereich (Welt) gemeistert:** alle Level gemeistert.
+- **Geheimes Level frei:** Level gemeistert und die Bestätigungs-Runde ohne jede Hilfe.
 
 ### 6.3 Sterne pro Runde (Genauigkeit, nicht Tempo)
 
@@ -245,7 +255,7 @@ Damit sind „Flüchtigkeit“ und „Konzeptfehler“ keine eigenen Fehlertypen
 ### 8.1 Elemente [fest]
 
 - **Weltkarte:** Lernbereiche der gewählten Klassenstufe als Welten; Fortschritt pro Welt sichtbar (Level-Stufen, Sterne).
-- **Level** = Lernziel; darin **Runden** à 5–10 Aufgaben, 3–5 Minuten.
+- **Level** (Teil eines Lernziels, siehe Glossar); darin **Runden** à 5–10 Aufgaben, 3–5 Minuten.
 - **Sterne für Genauigkeit**, Zeitmodus optional.
 - **Belohnungen nur kosmetisch** (z. B. Farben, Accessoires für die eigene Figur, Karten-Deko).
 - **Eigene Figur, eigene Optik**, nichts, was an bekannte Marken/Figuren erinnert; Grafiken selbst erstellt oder CC0.
@@ -303,7 +313,7 @@ Kein Klarname, keine E-Mail des Kindes. Passwort vergessen ⇒ Tutor setzt zurü
 
 ### 9.4 Testvorbereitung [fest]
 
-1. **Termin eintragen** (Schüler oder Tutor): Art (Leistungskontrolle / Klassenarbeit), Datum, Themen (Lernbereiche → Lernziele/Bausteine auswählen), erlaubte Hilfsmittel.
+1. **Termin eintragen** (Schüler oder Tutor): Art (Leistungskontrolle / Klassenarbeit), Datum, Themen (Lernbereiche → Level/Bausteine auswählen), erlaubte Hilfsmittel.
 2. **Countdown-Plan:** Die App verteilt die Themen auf die verbleibenden Tage:
    - **Schwächen zuerst** (niedrigste Meisterung, systematische Fehler).
    - **Wiederholung in Abständen** (z. B. Baustein nach 1, 3 und 7 Tagen erneut, angepasst an die verbleibende Zeit).
@@ -327,7 +337,7 @@ Pro Schüler:
   1. systematischer Fehler mit höchster Priorität + passender Reparatur-Baustein,
   2. Test-Themen mit Lücke, wenn ein Test in ≤ 14 Tagen ansteht,
   3. überfällige Zuweisungen,
-  4. nächstes sinnvolles Lernziel im aktuellen Lernbereich.
+  4. nächstes sinnvolles Level im aktuellen Lernbereich.
 
 Zusätzlich: Gesamtliste aller Schüler mit Ampel (Zuweisung überfällig, Test bald, systematischer Fehler neu).
 
@@ -355,12 +365,13 @@ Grundsätze:
 |---|---|
 | **Lehrplan** | id, Schulart, Bildungsgang/Kursart, Fassung/Jahr, Quelle (URL lplandb) |
 | **Lernbereich** | id, Lehrplan-id, Klassenstufe, Nummer, Titel, Richtstunden, Wahlpflicht ja/nein, Lehrplan-Verweis |
-| **Lernziel** | id, Lernbereich-id, Reihenfolge, Titel (schülergerecht), Lehrplan-Formulierung/Verweis, Bausteine (Liste) |
+| **Lernziel** | id, Lernbereich-id, Lehrplan-Formulierung, Niveau (Einblick / Kennen / Beherrschen / Anwenden), Unterpunkte |
+| **Level** | id, Lernbereich-id, Lernziel-id, Reihenfolge, Titel (schülergerecht), Bausteine (Liste), Hinweis |
 | **Baustein** | id, Titel, Beschreibung, Klassenstufe (erste Einführung), AFB-Spanne, Kennzeichen „ohne Hilfsmittel möglich“, Generatoren (Liste), typische Fehlertypen |
 | **Voraussetzung** | von-Baustein, zu-Baustein, Art (notwendig/hilfreich) |
 | **Generator** | id, Version, Baustein(e), AFB, Darstellungen, Aufgabentypen, ohne Hilfsmittel, Parameterbereiche, Code |
 | **Fehlertyp** | Code, Name, Beschreibung, Schüler-Hinweistext |
-| **Geheimes Level** | id, Lernziel-id (Freischalt-Bedingung), Generatoren, Kennzeichen „nicht testrelevant“ |
+| **Geheimes Level** | id, Level-id (Freischalt-Bedingung), Generatoren, Kennzeichen „nicht testrelevant“ |
 | **Kosmetik-Gegenstand** | id, Name, Grafik, Freischalt-Bedingung |
 
 ### 10.2 Personen- und Nutzungsdaten (EU-Datenbank)
@@ -371,11 +382,11 @@ Grundsätze:
 | **schule** | id, Name, Ort, Schulart | Zuordnung (Lehrplan, ggf. schulspezifische Abfolge) | Referenzdaten, kein Personenbezug |
 | **schueler** | id, tutor_id, pseudonym (eindeutig), schulart, bildungsgang (null / Haupt / Real), kursart (null / GK / LK), schule_id, klassenstufe, aktueller_lernbereich_id, figur (JSON), status (aktiv / beendet), erstellt_am, beendet_am | Konto, Lehrplanzuordnung | 30 Tage nach Vertragsende |
 | **schueler_login** | schueler_id, Anmelde-Kennung (intern), Passwort-Hash (vom Auth-Dienst verwaltet) | Anmeldung ohne E-Mail | mit Konto |
-| **runde** | id, schueler_id, lernziel_id, kontext (Übung / Zuweisung / Reparatur / Testplan / Probe-Arbeit / Geheim), zuweisung_id?, testtermin_id?, gestartet_am, beendet_am, sterne | Spielverlauf, Sterne | mit Konto |
+| **runde** | id, schueler_id, level_id, kontext (Übung / Zuweisung / Reparatur / Testplan / Probe-Arbeit / Geheim), zuweisung_id?, testtermin_id?, gestartet_am, beendet_am, sterne | Spielverlauf, Sterne | mit Konto |
 | **versuch** | id, runde_id, schueler_id, baustein_id, generator_id, generator_version, seed, aufgabentyp, darstellung, afb, ohne_hilfsmittel, antwort (Text), korrekt, punkte, hilfe_stufe (0–3), fehlertyp_code?, dauer_s, zeitpunkt | Meisterung, Fehleranalyse | mit Konto (danach ggf. nur anonyme Zählwerte) |
 | **fehlereinordnung** *(berechnet)* | schueler_id, baustein_id, fehlertyp_code, einordnung (flüchtig / systematisch), anzahl, zuletzt_am | Reparatur-Vorschläge, Tutor-Übersicht | mit Konto |
 | **meisterung** | schueler_id, baustein_id, stufe (neu / in Arbeit / sicher / gemeistert), wert, gemeistert_am, letzte_uebung_am, naechste_wiederholung_am | Fortschritt, Wiederholungsplanung | mit Konto |
-| **zuweisung** | id, schueler_id, tutor_id, titel, inhalte (Lernziel-/Baustein-IDs), ziel (Art + Wert), frist, notiz, status, erstellt_am, erledigt_am | Hausaufgaben | mit Konto |
+| **zuweisung** | id, schueler_id, tutor_id, titel, inhalte (Level-/Baustein-IDs), ziel (Art + Wert), frist, notiz, status, erstellt_am, erledigt_am | Hausaufgaben | mit Konto |
 | **testtermin** | id, schueler_id, angelegt_von (Schüler/Tutor), art (LK / KA), datum, themen (IDs), hilfsmittel, einschaetzung, note? | Testvorbereitung | mit Konto; Note optional, nur für Tutor sichtbar |
 | **testplan_eintrag** | id, testtermin_id, datum, bausteine, erledigt | Countdown-Plan | mit Testtermin |
 | **probearbeit** | id, testtermin_id, runde_id_teil_a, runde_id_teil_b, ergebnis_prozent, erstellt_am | Probe-Arbeit | mit Testtermin |
@@ -439,8 +450,8 @@ Hinweise:
 **Enthalten:**
 - Gymnasium Klasse 8, Lernbereich **„Terme und Gleichungen“ vollständig**: alle Lernziele, alle Bausteine, Generatoren für alle drei AFB, mehrere Darstellungen und Aufgabentypen, Fehlerdiagnose, Hilfen, Tests.
 - Die dafür nötigen **Voraussetzungs-Bausteine aus Kl. 5–7** als Reparatur-Level (z. B. rationale Zahlen/Vorzeichen, Bruchrechnung, Vorrangregeln) – nur so weit, wie das Netz sie verlangt.
-- Mindestens 1 geheimes Level pro Lernziel-Gruppe.
-- Optional ein **zweiter Lernbereich** (Wahl nach Unterrichtsstand der Pilotschüler).
+- 3 geheime Level (siehe `inhalte/UEBERSICHT.md`).
+- Als **zweiter Lernbereich**: Kl. 8, LB 3 „Funktionen und lineare Gleichungssysteme“ (dort gehören laut Lehrplan die Gleichungssysteme hin).
 - Tutor-Bereich: Schüler anlegen, Zuweisungen, Testtermine, Übersicht inkl. Vorschlag für die nächste Stunde.
 - Testvorbereitung inkl. Probe-Arbeit.
 - Weltkarte, Figur, Sterne, wenige kosmetische Belohnungen.
@@ -468,5 +479,12 @@ Hinweise:
 | 20.11.2026 | Löschung 30 Tage nach Vertragsende; danach nur anonyme Zählwerte pro Generator. |
 | 20.11.2026 | Einstiegs-Check: ja, kurz und freiwillig. |
 | 20.11.2026 | Standard-Ziel einer Zuweisung: Stufe „sicher“ erreichen. |
+
+| 20.11.2026 | M1-Inhalte (Gym Kl. 8, LB 1) fachlich abgenommen. |
+| 20.11.2026 | SPEC v1.1: Level ≠ Lernziel. Lernziele bleiben wie im Lehrplan; darunter kleinere, spielbare Level (Abschnitte 2, 4.1, 6.2, 10.1). |
+| 20.11.2026 | CAS-Lernziel: Level „CAS-Ergebnisse lesen und prüfen“, ohne Gerätebedienung, nie im hilfsmittelfreien Teil (5.5). |
+| 20.11.2026 | Bruchgleichungen: ausgeschlossene Werte müssen angegeben werden; bei Bruchtermen nur Hinweis (5.5). |
+| 20.11.2026 | Notation Sonderfälle: `L = { }` (auch `∅` akzeptiert) und `L = ℚ` (5.5). |
+| 20.11.2026 | Zweiter Pilot-Lernbereich: Kl. 8, LB 3 „Funktionen und lineare Gleichungssysteme“ (13). |
 
 **Nach dem Pilot zu überprüfen:** alle Schwellenwerte (Meisterung, Sterne, systematische Fehler, Test-Einschätzung) anhand der echten Versuchsdaten.

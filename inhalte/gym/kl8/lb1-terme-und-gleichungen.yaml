@@ -15,7 +15,7 @@ titel: "Arbeiten mit Termen und Gleichungen"
 welt_name: "Terme und Gleichungen"
 richtstunden: 24
 quelle: [lp-gy-2021 S. 20]
-status: entwurf
+status: geprueft
 
 lernziele:
   gym8-lb1-lz1:
@@ -97,7 +97,7 @@ level:
     titel: "Mit dem CAS arbeiten"
     lernziel: gym8-lb1-lz2
     bausteine: [t8-cas-ergebnisse]
-    hinweis: "Offene Frage an Timon: als Level in der App oder nur im Unterricht/in der Nachhilfe?"
+    hinweis: "Nur CAS-Ergebnisse lesen und prüfen, keine Gerätebedienung. Nie im hilfsmittelfreien Teil der Probe-Arbeit."
 
 geheime_level:
   - id: gym8-lb1-g1

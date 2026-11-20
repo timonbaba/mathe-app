@@ -8,7 +8,7 @@ o=[]
 w=o.append
 w('# Übersicht: Gym Kl. 8 – „Arbeiten mit Termen und Gleichungen“\n')
 w('> Automatisch aus den Dateien in `inhalte/` erzeugt – bitte nicht von Hand bearbeiten.')
-w('> Status: **Entwurf zur fachlichen Prüfung durch Timon** (Meilenstein M1).\n')
+w(f'> Status: **{"fachlich geprüft" if lb["status"]=="geprueft" else "Entwurf zur fachlichen Prüfung"}**\n')
 w(f'Lehrplan: Gymnasium Mathematik, Kl. 8, LB {lb["nummer"]} ({lb["richtstunden"]} Ustd.), S. 20.\n')
 w('## Lernziele laut Lehrplan\n')
 for k,v in lb['lernziele'].items():
