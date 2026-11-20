@@ -8,11 +8,11 @@ Zeitangaben sind grobe Schätzungen bei einigen Stunden Arbeit pro Woche.
 
 ---
 
-## M0 – Spezifikation und Grundsatzentscheidungen *(fast fertig)*
+## M0 – Spezifikation und Grundsatzentscheidungen *(erledigt)*
 - [x] `CLAUDE.md`, `SPEC.md`, `ROADMAP.md` angelegt
 - [x] Timon prüft und gibt die SPEC frei (20.11.2026)
 - [x] Entscheidungen: Stack, Meisterungs-Kriterien (Startwerte), Fehlertypen V1, Vorgehen Lehrplan-Inhalte
-- [ ] GitHub-Repository anlegen, Dateien einchecken
+- [x] GitHub-Repository anlegen, Dateien einchecken (timonbaba/mathe-app)
 
 **Abnahme:** SPEC freigegeben, offene Punkte entschieden oder bewusst vertagt.
 
