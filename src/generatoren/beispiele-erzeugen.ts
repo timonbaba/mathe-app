@@ -43,6 +43,11 @@ for (const g of GENERATOREN) {
           zeilen.push(`![Grafik](${datei})`, '');
         }
         zeilen.push(`**Aufgabe:** ${a.aufgabe.text}`, '');
+        if (a.tabelle) {
+          zeilen.push(`| ${a.tabelle.kopf.join(' | ')} |`, `|${a.tabelle.kopf.map(() => '---').join('|')}|`);
+          for (const z of a.tabelle.zeilen) zeilen.push(`| ${z.join(' | ')} |`);
+          zeilen.push('');
+        }
         if (a.zeilen) {
           a.zeilen.forEach((z, i) => zeilen.push(`${i + 1}. = ${z.text}`));
           zeilen.push('');

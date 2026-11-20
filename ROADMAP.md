@@ -37,6 +37,7 @@ Stand:
 - [x] Terme (Polynome), Einlesen von Schülereingaben, Formprüfung
 - [x] Generator-Schnittstelle, Beispielausgabe
 - [x] Gemeinsame Bausteine: Termbaum (Lösungswege, Fehler nachbilden), Pflichttests für Term-Generatoren
+- [x] Level 1 „Terme lesen“: `t8-term-struktur`, `t8-term-text` (Fachsprache ↔ Term), `t8-termwert` (auch Wertetabelle)
 - [x] Level 2 „Zusammenfassen und Klammern auflösen“ komplett (3 Generatoren, warten auf Sichtprüfung durch Timon):
   `t8-zusammenfassen`, `t8-ausmultiplizieren-monom`, `t8-klammern-verschachtelt`
 - [x] Level 3 „Summe mal Summe“ komplett (warten auf Sichtprüfung): `t8-summe-mal-summe`, `t8-term-gleichwertig` (neue Aufgabentypen „Finde den Fehler“ und „Gegenbeispiel“)

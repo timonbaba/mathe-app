@@ -67,6 +67,8 @@ export interface Aufgabe {
   readonly zeilen?: readonly Formel[];
   /** Optional: Grafik als SVG-Text (selbst erzeugt; Farben über CSS-Variablen, damit hell/dunkel funktioniert). */
   readonly grafik?: string;
+  /** Optional: Wertetabelle; eine Zelle mit „?“ ist gesucht. */
+  readonly tabelle?: { readonly kopf: readonly string[]; readonly zeilen: readonly (readonly string[])[] };
   /**
    * Prüft eine Antwort. Bei 'eingabe' die Schülereingabe als Text,
    * bei 'auswahl' der Index der gewählten Option als Text ("0", "1", …),
