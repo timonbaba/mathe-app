@@ -22,7 +22,9 @@ for (const g of GENERATOREN) {
   for (const afb of g.afb as AFB[]) {
     for (const typ of g.typen as Aufgabentyp[]) {
       zeilen.push(`## AFB ${afb} · ${ZEICHEN_JE_TYP[typ] ?? typ}`, '');
-      for (let seed = 0; seed < 5; seed++) {
+      // insgesamt ca. 20 Beispiele je Generator, gleichmäßig auf AFB und Aufgabentypen verteilt
+      const jeKombination = Math.ceil(20 / (g.afb.length * g.typen.length));
+      for (let seed = 0; seed < jeKombination; seed++) {
         const a = g.erzeuge(seed, { afb, typ });
         nr++;
         zeilen.push(`### ${nr}. ${a.anweisung}  (Seed ${seed})`, '', `**Aufgabe:** ${a.aufgabe.text}`, '');

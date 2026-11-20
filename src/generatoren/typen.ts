@@ -33,6 +33,8 @@ export interface Auswahloption {
   readonly richtig: boolean;
   /** Bei falschen Optionen: der Fehler, der genau diese Antwort erzeugt. */
   readonly fehlertyp?: FehlertypCode;
+  /** Optional: genauere Rückmeldung als der Standardtext des Fehlertyps. */
+  readonly rueckmeldung?: string;
 }
 
 export interface Hilfen {

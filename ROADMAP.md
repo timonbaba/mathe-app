@@ -36,8 +36,11 @@ Stand:
 - [x] Exakte Bruchrechnung, deterministischer Zufall
 - [x] Terme (Polynome), Einlesen von Schülereingaben, Formprüfung
 - [x] Generator-Schnittstelle, Beispielausgabe
-- [x] Generator 1/26: `t8-ausmultiplizieren-monom` (wartet auf Sichtprüfung durch Timon)
-- [ ] weitere Generatoren
+- [x] Gemeinsame Bausteine: Termbaum (Lösungswege, Fehler nachbilden), Pflichttests für Term-Generatoren
+- [x] Level 2 „Zusammenfassen und Klammern auflösen“ komplett (3 Generatoren, warten auf Sichtprüfung durch Timon):
+  `t8-zusammenfassen`, `t8-ausmultiplizieren-monom`, `t8-klammern-verschachtelt`
+- [ ] Level 3 „Summe mal Summe“ (`t8-summe-mal-summe`, `t8-term-gleichwertig`)
+- [ ] weitere Level (insgesamt 26 Kl.-8-Bausteine + 13 Reparatur-Bausteine)
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige
 - Generator-Schnittstelle (Seed, Lösung, Antwortprüfung, Fehlerdiagnose, Hilfen)

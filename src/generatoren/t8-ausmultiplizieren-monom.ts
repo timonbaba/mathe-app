@@ -15,28 +15,26 @@
  *  - PO  Hochzahlen nicht addiert (x·x = x statt x²); nur bei Variante monom.
  */
 import { Bruch } from '../mathe/bruch';
-import { formatGlied, formatGlieder, gliedAlsPolynom, monomSchluessel, Polynom, type Glied, type Monom } from '../mathe/polynom';
-import { formBefund, leseTerm, alsPolynom, TermFehler } from '../mathe/term-parser';
+import { formatGlied, monomSchluessel, type Glied, type Monom } from '../mathe/polynom';
 import { Zufall } from '../mathe/zufall';
 import {
-  ANZEIGE,
-  GeneratorFehler,
-  type AFB,
-  type Aufgabe,
-  type Auswahloption,
-  type Bewertung,
-  type FehlertypCode,
-  type Formel,
-  type Generator,
-  type Wunsch,
-} from './typen';
+  auswahlOptionen,
+  bereinigeFehlantworten,
+  formel,
+  gliedMal,
+  hatVariablen,
+  monomMal,
+  monomMalOhneHochzahlen,
+  pruefeAuswahl,
+  pruefeTermEingabe,
+  sortiereGlieder,
+  summeAlsPolynom,
+  zufallsMonom,
+  type Fehlantwort,
+} from './gemeinsam';
+import { ANZEIGE, GeneratorFehler, type AFB, type Aufgabe, type Auswahloption, type Bewertung, type FehlertypCode, type Formel, type Generator, type Wunsch } from './typen';
 
 type Variante = 'zahl' | 'minusklammer' | 'monom';
-
-interface Fehlantwort {
-  readonly fehlertyp: FehlertypCode;
-  readonly glieder: readonly Glied[];
-}
 
 const RUECKMELDUNG: Partial<Record<FehlertypCode, string>> = {
   KL: 'Du hast nicht jedes Glied in der Klammer mit dem Faktor multipliziert.',
@@ -45,38 +43,7 @@ const RUECKMELDUNG: Partial<Record<FehlertypCode, string>> = {
   UK: 'Das stimmt noch nicht. Möchtest du einen Denkanstoß?',
 };
 
-// --- kleine Helfer -----------------------------------------------------------
-
 const opt = ANZEIGE;
-
-function formel(glieder: readonly Glied[]): Formel {
-  return { text: formatGlieder(glieder, 'text', opt), latex: formatGlieder(glieder, 'latex', opt) };
-}
-
-function monomMal(a: Monom, b: Monom): Monom {
-  const m: Record<string, number> = { ...a };
-  for (const [v, e] of Object.entries(b)) m[v] = (m[v] ?? 0) + e;
-  return m;
-}
-
-/** Fehler PO: Hochzahlen nicht addiert, sondern die größere genommen (x·x = x). */
-function monomMalOhneHochzahlen(a: Monom, b: Monom): Monom {
-  const m: Record<string, number> = { ...a };
-  for (const [v, e] of Object.entries(b)) m[v] = Math.max(m[v] ?? 0, e);
-  return m;
-}
-
-function gliedMal(a: Glied, b: Glied): Glied {
-  return { koeffizient: a.koeffizient.mal(b.koeffizient), monom: monomMal(a.monom, b.monom) };
-}
-
-function summeAlsPolynom(glieder: readonly Glied[]): Polynom {
-  return Polynom.summe(glieder.map(gliedAlsPolynom));
-}
-
-function hatVariablen(m: Monom): boolean {
-  return Object.values(m).some((e) => e > 0);
-}
 
 // --- Aufgabe zusammenstellen -------------------------------------------------
 
@@ -87,21 +54,6 @@ interface Rohaufgabe {
 }
 
 const VARIABLENPAARE: readonly (readonly [string, string])[] = [['x', 'y'], ['a', 'b'], ['m', 'n']];
-
-function zufallsMonom(z: Zufall, vars: readonly [string, string], maxGrad: number): Monom {
-  const grad = z.ganzzahl(0, maxGrad);
-  const m: Record<string, number> = {};
-  for (let i = 0; i < grad; i++) {
-    const v = z.auswahl(vars);
-    m[v] = (m[v] ?? 0) + 1;
-  }
-  return m;
-}
-
-function sortiereGlieder(glieder: Glied[]): void {
-  const reihenfolge = Polynom.summe(glieder.map((g) => Polynom.glied(1, g.monom))).gliederSortiert().map((g) => monomSchluessel(g.monom));
-  glieder.sort((x, y) => reihenfolge.indexOf(monomSchluessel(x.monom)) - reihenfolge.indexOf(monomSchluessel(y.monom)));
-}
 
 function zieheRohaufgabe(z: Zufall, afb: AFB): Rohaufgabe {
   const vars = z.auswahl(VARIABLENPAARE);
@@ -164,18 +116,7 @@ function fehlantworten(r: Rohaufgabe): Fehlantwort[] {
       glieder: r.klammer.map((g) => ({ koeffizient: r.faktor.koeffizient.mal(g.koeffizient), monom: monomMalOhneHochzahlen(r.faktor.monom, g.monom) })),
     });
   }
-  // nur echte, verschiedene Fehlantworten behalten
-  const loesung = summeAlsPolynom(richtig);
-  const gesehen: Polynom[] = [loesung];
-  return liste.filter((f) => {
-    // Fehlantworten müssen „fertig aussehen“: keine gleichartigen Glieder nebeneinander
-    const schluessel = f.glieder.map((g) => monomSchluessel(g.monom));
-    if (new Set(schluessel).size !== schluessel.length) return false;
-    const p = summeAlsPolynom(f.glieder);
-    if (gesehen.some((q) => q.gleich(p))) return false;
-    gesehen.push(p);
-    return true;
-  });
+  return bereinigeFehlantworten(summeAlsPolynom(richtig), liste);
 }
 
 function aufgabeFormel(r: Rohaufgabe): Formel {
@@ -210,42 +151,6 @@ function denkanstoss(r: Rohaufgabe): string {
   if (r.faktor.koeffizient.istNegativ()) teile.push('Der Faktor ist negativ – achte auf die Vorzeichen.');
   if (r.variante === 'monom') teile.push('Bei gleichen Variablen werden die Hochzahlen addiert, z. B. x · x² = x³.');
   return teile.join(' ');
-}
-
-// --- Antwortprüfung ----------------------------------------------------------
-
-function pruefeEingabe(antwort: string, loesung: Polynom, fehler: readonly Fehlantwort[]): Bewertung {
-  let knoten;
-  let p: Polynom;
-  try {
-    knoten = leseTerm(antwort);
-    p = alsPolynom(knoten);
-  } catch (e) {
-    if (e instanceof TermFehler || e instanceof RangeError) {
-      return { ergebnis: 'unlesbar', rueckmeldung: 'Das kann ich nicht als Term lesen. Prüfe Klammern und Rechenzeichen.' };
-    }
-    throw e;
-  }
-  if (p.gleich(loesung)) {
-    const befund = formBefund(knoten);
-    if (befund.klammernUebrig) return { ergebnis: 'unvollstaendig', rueckmeldung: 'Der Wert stimmt, aber es steht noch eine Klammer da. Multipliziere sie aus.' };
-    if (befund.produkteUnvereinfacht) return { ergebnis: 'unvollstaendig', rueckmeldung: 'Der Wert stimmt. Rechne die Produkte in den einzelnen Gliedern noch aus.' };
-    if (befund.zusammenfassbar) return { ergebnis: 'unvollstaendig', rueckmeldung: 'Der Wert stimmt. Fasse gleichartige Glieder noch zusammen.' };
-    return { ergebnis: 'richtig', rueckmeldung: 'Richtig!' };
-  }
-  for (const f of fehler) {
-    if (summeAlsPolynom(f.glieder).gleich(p)) return { ergebnis: 'falsch', fehlertyp: f.fehlertyp, rueckmeldung: RUECKMELDUNG[f.fehlertyp]! };
-  }
-  // allgemeiner Vorzeichenfehler: gleiche Glieder, nur Vorzeichen anders
-  const a = loesung.gliederSortiert();
-  const b = p.gliederSortiert();
-  if (
-    a.length === b.length &&
-    a.every((g, i) => monomSchluessel(g.monom) === monomSchluessel(b[i]!.monom) && g.koeffizient.betrag().gleich(b[i]!.koeffizient.betrag()))
-  ) {
-    return { ergebnis: 'falsch', fehlertyp: 'VZ', rueckmeldung: RUECKMELDUNG.VZ! };
-  }
-  return { ergebnis: 'falsch', fehlertyp: 'UK', rueckmeldung: RUECKMELDUNG.UK! };
 }
 
 // --- Generator ---------------------------------------------------------------
@@ -288,10 +193,7 @@ export const ausmultiplizierenMonom: Generator = {
 
       let optionen: Auswahloption[] | undefined;
       if (typ === 'auswahl') {
-        optionen = z.gemischt([
-          { formel: loesung, richtig: true },
-          ...fehler.slice(0, 3).map((f) => ({ formel: formel(f.glieder), richtig: false, fehlertyp: f.fehlertyp })),
-        ]);
+        optionen = auswahlOptionen(z, loesung, fehler);
       }
 
       return {
@@ -309,13 +211,8 @@ export const ausmultiplizierenMonom: Generator = {
         hilfen: { denkanstoss: denkanstoss(r), ansatz, loesungsweg },
         optionen,
         pruefe(antwort: string): Bewertung {
-          if (typ === 'auswahl') {
-            const o = optionen![Number(antwort)];
-            if (!o || !/^\d+$/.test(antwort.trim())) return { ergebnis: 'unlesbar', rueckmeldung: 'Bitte wähle eine Antwort aus.' };
-            if (o.richtig) return { ergebnis: 'richtig', rueckmeldung: 'Richtig!' };
-            return { ergebnis: 'falsch', fehlertyp: o.fehlertyp, rueckmeldung: RUECKMELDUNG[o.fehlertyp ?? 'UK']! };
-          }
-          return pruefeEingabe(antwort, loesungPoly, fehler);
+          if (typ === 'auswahl') return pruefeAuswahl(optionen!, antwort, RUECKMELDUNG);
+          return pruefeTermEingabe(antwort, loesungPoly, fehler, RUECKMELDUNG);
         },
       };
     }
