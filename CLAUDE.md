@@ -59,4 +59,20 @@ Stack (Details und Begründung: `SPEC.md`, Abschnitt 12a):
 - Tests mit Vitest; Formeldarstellung mit KaTeX
 - Hosting der Oberfläche: Netlify (Deploy aus GitHub); Konten und Datenbank: Supabase, Region Frankfurt
 
-> Ordnerstruktur und Befehle (Starten, Testen, Deployen) werden ergänzt, sobald das Projekt angelegt ist.
+Ordnerstruktur:
+- `inhalte/` – Lehrplan-Inhalte als YAML (Lernbereiche, Level, Bausteine, Voraussetzungen, Fehlertypen); `inhalte/UEBERSICHT.md` wird erzeugt
+- `src/mathe/` – Mathe-Kern (exakte Brüche, deterministischer Zufall, später Terme/Gleichungen); keine Abhängigkeit von Oberfläche oder Datenbank
+- `src/generatoren/` – Aufgabengeneratoren (folgt), je Generator eine Testdatei daneben
+- `werkzeuge/` – Hilfsskripte (Inhalte prüfen, Übersicht erzeugen; vorerst Python)
+- `.github/workflows/` – automatische Tests bei jedem Push
+
+Befehle:
+- `npm test` – alle Tests einmal ausführen
+- `npm run test:watch` – Tests bei jeder Änderung neu ausführen
+- `npm run typecheck` – TypeScript-Prüfung
+- `python3 werkzeuge/inhalte_pruefen.py` – Inhaltsdateien auf Konsistenz prüfen
+- `python3 werkzeuge/uebersicht_erzeugen.py` – `inhalte/UEBERSICHT.md` neu erzeugen (nach jeder Inhaltsänderung)
+
+Regeln für den Mathe-Kern:
+- Zahlen in Lösungen immer als `Bruch` (src/mathe/bruch.ts), nie als `number`-Gleitkomma.
+- Zufall nur über `Zufall` (src/mathe/zufall.ts) mit Seed. Der Algorithmus darf sich nicht ändern (Referenztest), sonst lassen sich alte Versuche nicht mehr rekonstruieren.
