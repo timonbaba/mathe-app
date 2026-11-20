@@ -47,6 +47,12 @@ export interface Optionen {
   readonly maxHochzahl: number;
   /** Mindestanteil verschiedener Aufgaben je Kombination (Standard 0,95) */
   readonly mindestVielfalt?: number;
+  /**
+   * Alternativ: Mindestanzahl verschiedener Aufgaben je Kombination – für Bausteine mit
+   * naturgemäß kleinem Aufgabenraum (z. B. (x + 3)²). Wiederholungen innerhalb einer Runde
+   * verhindert die Aufgabenauswahl.
+   */
+  readonly mindestAnzahlVerschieden?: Partial<Record<AFB, number>>;
 }
 
 /** Erzeugt alle Aufgaben (einmal pro Testdatei) und registriert die Pflichttests. */
@@ -101,7 +107,9 @@ export function pflichttestsTermVereinfachen(gen: Generator, o: Optionen): Aufga
   it('Vielfalt: kaum doppelte Aufgaben', () => {
     for (const [afb, typ] of o.kombinationen) {
       const texte = aufgaben.filter((a) => a.afb === afb && a.typ === typ).map((a) => a.aufgabe.text);
-      expect(new Set(texte).size / texte.length).toBeGreaterThan(o.mindestVielfalt ?? 0.95);
+      const absolut = o.mindestAnzahlVerschieden?.[afb];
+      if (absolut !== undefined) expect(new Set(texte).size, `${afb}/${typ}`).toBeGreaterThanOrEqual(absolut);
+      else expect(new Set(texte).size / texte.length, `${afb}/${typ}`).toBeGreaterThan(o.mindestVielfalt ?? 0.95);
     }
   });
 

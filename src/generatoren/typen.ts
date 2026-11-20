@@ -65,6 +65,8 @@ export interface Aufgabe {
    * (jeweils ohne führendes „=“). Antwort ist der Index der ersten falschen Zeile.
    */
   readonly zeilen?: readonly Formel[];
+  /** Optional: Grafik als SVG-Text (selbst erzeugt; Farben über CSS-Variablen, damit hell/dunkel funktioniert). */
+  readonly grafik?: string;
   /**
    * Prüft eine Antwort. Bei 'eingabe' die Schülereingabe als Text,
    * bei 'auswahl' der Index der gewählten Option als Text ("0", "1", …),

@@ -41,7 +41,8 @@ Stand:
   `t8-zusammenfassen`, `t8-ausmultiplizieren-monom`, `t8-klammern-verschachtelt`
 - [x] Level 3 „Summe mal Summe“ komplett (warten auf Sichtprüfung): `t8-summe-mal-summe`, `t8-term-gleichwertig` (neue Aufgabentypen „Finde den Fehler“ und „Gegenbeispiel“)
 - [x] Level 4 „Ausklammern“ komplett (wartet auf Sichtprüfung): `t8-ausklammern`, mit Prüfung auf vollständiges Ausklammern
-- [ ] Level 5 „Binomische Formeln“ (4 Generatoren, erste grafische Darstellung)
+- [x] Level 5 „Binomische Formeln“ komplett: `t8-binom-geometrie` (mit Grafik), `t8-binom-ausmultiplizieren`, `t8-binom-ergaenzen`, `t8-binom-faktorisieren`
+- [ ] Level 6 „Bruchterme vereinfachen“
 - [ ] weitere Level (insgesamt 26 Kl.-8-Bausteine + 13 Reparatur-Bausteine)
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige

@@ -35,7 +35,14 @@ for (const g of GENERATOREN) {
       for (let seed = 0; seed < jeKombination; seed++) {
         const a = g.erzeuge(seed, { afb, typ });
         nr++;
-        zeilen.push(`### ${nr}. ${a.anweisung}  (Seed ${seed})`, '', `**Aufgabe:** ${a.aufgabe.text}`, '');
+        zeilen.push(`### ${nr}. ${a.anweisung}  (Seed ${seed})`, '');
+        if (a.grafik) {
+          mkdirSync('beispiele/grafiken', { recursive: true });
+          const datei = `grafiken/${g.id}-${nr}.svg`;
+          writeFileSync(`beispiele/${datei}`, a.grafik);
+          zeilen.push(`![Grafik](${datei})`, '');
+        }
+        zeilen.push(`**Aufgabe:** ${a.aufgabe.text}`, '');
         if (a.zeilen) {
           a.zeilen.forEach((z, i) => zeilen.push(`${i + 1}. = ${z.text}`));
           zeilen.push('');
