@@ -1,0 +1,79 @@
+# Fehlertyp-Systematik Version 1 (SPEC Abschnitt 7, freigegeben 20.11.2026)
+# Dimension a) inhaltlicher Fehlertyp. Die Einordnung flüchtig/systematisch
+# wird aus der Wiederholung berechnet und ist KEIN eigener Typ.
+# `hinweis` ist der kurze Text, den Schüler nach einem Fehler sehen.
+
+version: 1
+
+einordnung:
+  systematisch_wenn:
+    gleicher_fehlertyp_im_gleichen_baustein: 2
+    innerhalb_der_letzten_versuche: 5
+    oder_in_verschiedenen_runden: 2
+  sonst: fluechtig
+
+fehlertypen:
+  VZ:
+    name: Vorzeichen
+    beschreibung: Vorzeichen falsch übernommen, Vorzeichenregeln verletzt.
+    beispiel: "−3 · (−4) = −12"
+    hinweis: "Schau dir die Vorzeichen noch einmal genau an."
+  KL:
+    name: Klammer
+    beschreibung: >
+      Klammer falsch aufgelöst: nicht jedes Glied multipliziert,
+      Minus vor der Klammer nicht auf alle Glieder angewendet, Summe · Summe unvollständig.
+    beispiel: "2 · (x + 3) = 2x + 3"
+    hinweis: "Beim Auflösen der Klammer muss jedes Glied in der Klammer berücksichtigt werden."
+  ZF:
+    name: Zusammenfassen
+    beschreibung: Ungleichartige Glieder zusammengefasst oder gleichartige übersehen.
+    beispiel: "3x + 2 = 5x"
+    hinweis: "Nur gleichartige Glieder (gleiche Variable, gleicher Exponent) darf man zusammenfassen."
+  VR:
+    name: Rechenregeln / Vorrang
+    beschreibung: Punkt vor Strich, Klammer zuerst, Potenz vor Punkt verletzt.
+    beispiel: "2 + 3 · 4 = 20"
+    hinweis: "Denk an die Reihenfolge: Klammern, Potenzen, Punkt vor Strich."
+  BR:
+    name: Bruch
+    beschreibung: Fehler beim Kürzen, Erweitern, Hauptnenner, Kehrwert; „aus Summen kürzen“.
+    beispiel: "1/2 + 1/3 = 2/5"
+    hinweis: "Brüche: erst gleichnamig machen – und kürzen darf man nur Faktoren, nicht Summanden."
+  PO:
+    name: Potenzen / binomische Formeln
+    beschreibung: Potenz falsch berechnet, x · x = 2x, binomische Formel ohne Mittelglied.
+    beispiel: "(a + b)² = a² + b²"
+    hinweis: "Bei (a + b)² fehlt oft das Mittelglied 2ab."
+  UM:
+    name: Äquivalenzumformung
+    beschreibung: >
+      Nur eine Seite umgeformt, falsche Gegenoperation, durch Term geteilt, der null sein
+      kann, Relationszeichen bei Ungleichungen nicht umgedreht.
+    beispiel: "2x = 6 ⇒ x = 4"
+    hinweis: "Was du auf einer Seite machst, musst du auf der anderen Seite genauso machen."
+  EH:
+    name: Einheiten / Größen
+    beschreibung: Einheiten falsch umgerechnet oder vergessen.
+    beispiel: "1 m² = 100 cm²"
+    hinweis: "Prüfe die Einheiten – bei Flächen und Volumen ändert sich die Umrechnungszahl."
+  DA:
+    name: Darstellung lesen / übertragen
+    beschreibung: Fehler beim Ablesen oder Übertragen aus Graph, Tabelle, Abbildung.
+    beispiel: "Achsen vertauscht"
+    hinweis: "Lies noch einmal genau ab: Welche Achse, welche Spalte?"
+  TV:
+    name: Textverständnis / Modellierung
+    beschreibung: Falscher Ansatz aus Sachtext, falsche Größe als Variable, Antwort passt nicht zur Frage.
+    beispiel: "„das Doppelte der Summe“ als 2x + 3 statt 2 · (x + 3)"
+    hinweis: "Lies den Text noch einmal Satz für Satz und übersetze ihn Stück für Stück."
+  RE:
+    name: Rechenfehler
+    beschreibung: Reiner Rechenfehler beim Kopfrechnen/Einmaleins ohne Regelverstoß.
+    beispiel: "7 · 8 = 54"
+    hinweis: "Da hat sich ein Rechenfehler eingeschlichen."
+  UK:
+    name: Unklassifiziert
+    beschreibung: Antwort passt zu keinem bekannten Fehlermuster.
+    beispiel: null
+    hinweis: "Das stimmt noch nicht. Möchtest du einen Denkanstoß?"

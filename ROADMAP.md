@@ -16,7 +16,10 @@ Zeitangaben sind grobe Schätzungen bei einigen Stunden Arbeit pro Woche.
 
 **Abnahme:** SPEC freigegeben, offene Punkte entschieden oder bewusst vertagt.
 
-## M1 – Inhaltsgerüst des Pilot-Lernbereichs *(als Nächstes, ca. 1–2 Wochen)*
+## M1 – Inhaltsgerüst des Pilot-Lernbereichs *(in Arbeit)*
+
+Stand: Entwurf liegt vor (`inhalte/`, Übersicht in `inhalte/UEBERSICHT.md`), wartet auf fachliche Prüfung durch Timon.
+
 - Lehrplan-PDF Gym Kl. 8 (und Kl. 5–7 für Voraussetzungen) auswerten
 - Lernbereich „Terme und Gleichungen“ als Datei: Lernziele mit Lehrplan-Verweis
 - Zerlegung in Bausteine, je mit AFB-Spanne, Darstellungen, typischen Fehlertypen

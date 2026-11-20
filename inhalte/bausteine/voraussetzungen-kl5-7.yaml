@@ -1,0 +1,145 @@
+# Voraussetzungs-Bausteine aus Kl. 5–7 (Gymnasium), soweit sie für den Pilot-Lernbereich
+# Kl. 8 LB 1 „Arbeiten mit Termen und Gleichungen“ gebraucht werden.
+# Sie erscheinen im Pilot als Reparatur-Level (keine eigene Welt).
+#
+# Felder:
+#   klasse          Klassenstufe der Einführung
+#   quelle          Lehrplan-/Interpretationshilfe-Stelle
+#   afb             Spanne der Anforderungsbereiche, die geübt werden
+#   ohne_hm         hilfsmittelfrei zu beherrschen (laut Interpretationshilfe)
+#   fehlertypen     typische Fehlertypen (für Diagnose und Reparatur-Zuordnung)
+#   voraussetzungen [id, art]  art: notwendig | hilfreich
+
+bausteine:
+
+  v5-vorrang:
+    titel: "Rechenreihenfolge beachten"
+    beschreibung: "Klammern, Potenzen, Punkt vor Strich; Rechengesetze vorteilhaft nutzen."
+    klasse: 5
+    quelle: [lp-gy-2021 S. 7 (Kl. 5, LB 1), ih-terme-gleichungen S. 3]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [VR, RE]
+    voraussetzungen: []
+
+  v5-bruch-kuerzen:
+    titel: "Brüche kürzen und erweitern"
+    klasse: 5
+    quelle: [lp-gy-2021 S. 8 (Kl. 5, LB 2)]
+    afb: [I]
+    ohne_hm: true
+    fehlertypen: [BR, RE]
+    voraussetzungen: []
+
+  v6-bruch-addieren:
+    titel: "Brüche addieren und subtrahieren"
+    beschreibung: "Hauptnenner finden, gleichnamig machen; auch gemischt mit Dezimalzahlen."
+    klasse: 6
+    quelle: [lp-gy-2021 S. 12 (Kl. 6, LB 1), ih-terme-gleichungen S. 3]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [BR, RE]
+    voraussetzungen: [[v5-bruch-kuerzen, notwendig]]
+
+  v6-bruch-multiplizieren:
+    titel: "Brüche multiplizieren und dividieren"
+    beschreibung: "Multiplizieren, Dividieren mit dem Kehrwert, vorher kürzen."
+    klasse: 6
+    quelle: [lp-gy-2021 S. 12 (Kl. 6, LB 1), ih-terme-gleichungen S. 3]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [BR, RE]
+    voraussetzungen: [[v5-bruch-kuerzen, notwendig]]
+
+  v7-rational-addieren:
+    titel: "Mit negativen Zahlen addieren und subtrahieren"
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [VZ, RE]
+    voraussetzungen: [[v6-bruch-addieren, hilfreich]]
+
+  v7-rational-multiplizieren:
+    titel: "Mit negativen Zahlen multiplizieren und dividieren"
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [VZ, BR, RE]
+    voraussetzungen: [[v6-bruch-multiplizieren, hilfreich]]
+
+  v7-potenz-wurzel:
+    titel: "Potenzen und Quadratwurzeln rationaler Zahlen"
+    beschreibung: "Unterschied (−2)⁵ und −2⁵; Quadratzahlen und Quadratwurzeln."
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [PO, VZ, VR]
+    voraussetzungen: [[v7-rational-multiplizieren, notwendig]]
+
+  v7-term-zusammenfassen:
+    titel: "Gleichartige Glieder zusammenfassen"
+    beschreibung: "Summen und Differenzen von Termen mit einer Variablen, z. B. Typ 2x − 8 + 3x + 4."
+    klasse: 7
+    quelle: [ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [ZF, VZ]
+    voraussetzungen: [[v7-rational-addieren, notwendig]]
+
+  v7-zahl-mal-summe:
+    titel: "Zahl mal Klammer (Distributivgesetz)"
+    beschreibung: "Zahl · Summe ausmultiplizieren, auch Minus vor der Klammer; höchstens ein Faktor ist eine Summe."
+    klasse: 7
+    quelle: [ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [KL, VZ]
+    voraussetzungen:
+      - [v7-rational-multiplizieren, notwendig]
+      - [v7-term-zusammenfassen, notwendig]
+
+  v7-gleichung-inhaltlich:
+    titel: "Einfache Gleichungen im Kopf lösen"
+    beschreibung: "Inhaltlich lösen, auch Produkt = 0 und einfache Betragsgleichungen."
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [UM, VZ, RE]
+    voraussetzungen: [[v7-rational-multiplizieren, hilfreich]]
+
+  v7-gleichung-linear:
+    titel: "Lineare Gleichungen in wenigen Schritten lösen"
+    beschreibung: "Äquivalenzumformungen mit einfachem Zahlenmaterial, Variable auf beiden Seiten, einfache Klammer."
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [I, II]
+    ohne_hm: true
+    fehlertypen: [UM, VZ, KL, ZF]
+    voraussetzungen:
+      - [v7-term-zusammenfassen, notwendig]
+      - [v7-zahl-mal-summe, hilfreich]
+      - [v7-gleichung-inhaltlich, hilfreich]
+
+  v7-gleichung-variable-im-nenner:
+    titel: "Einfache Gleichungen mit der Variablen im Nenner"
+    beschreibung: "Typ Zahl/Variable + Zahl = Zahl bzw. Verhältnisgleichung."
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [II]
+    ohne_hm: true
+    fehlertypen: [UM, BR]
+    voraussetzungen: [[v7-gleichung-linear, notwendig], [v6-bruch-multiplizieren, hilfreich]]
+
+  v7-formel-umstellen:
+    titel: "Einfache Formeln umstellen"
+    beschreibung: "Formeln aus Geometrie und Physik nach einer Größe umstellen (eine bis zwei Umformungen)."
+    klasse: 7
+    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    afb: [I, II, III]
+    ohne_hm: true
+    fehlertypen: [UM, BR]
+    voraussetzungen: [[v7-gleichung-linear, notwendig]]

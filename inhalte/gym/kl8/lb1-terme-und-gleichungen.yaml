@@ -1,0 +1,122 @@
+# Welt: Gymnasium Kl. 8, Lernbereich 1 „Arbeiten mit Termen und Gleichungen“ (24 Ustd.)
+# Quelle: lp-gy-2021 S. 20; ih-terme-gleichungen S. 5.
+#
+# Aufbau:
+#   lernziele  = die Lernziele genau wie im Lehrplan (für Tutor, Berichte, Lehrplan-Bezug)
+#   level      = spielbare Level; jedes Level gehört zu genau einem Lernziel und bündelt Bausteine.
+#                Reihenfolge ist eine Empfehlung, keine Sperre (SPEC 4.3).
+#   geheime_level = freischaltbar, nie testrelevant (SPEC 4.4)
+
+id: gym8-lb1
+schulart: gymnasium
+klasse: 8
+nummer: 1
+titel: "Arbeiten mit Termen und Gleichungen"
+welt_name: "Terme und Gleichungen"
+richtstunden: 24
+quelle: [lp-gy-2021 S. 20]
+status: entwurf
+
+lernziele:
+  gym8-lb1-lz1:
+    lehrplan: "Beherrschen des Umgangs mit Variablen und Termen beim Lösen von linearen Gleichungen"
+    niveau: beherrschen
+    unterpunkte:
+      - "Erkennen der Struktur von Termen"
+      - "Umformen von einfachen Termen und Gleichungen ohne Hilfsmittel"
+      - "binomische Formeln"
+  gym8-lb1-lz2:
+    lehrplan: "Kennen der Verwendung von CAS beim Umformen komplexerer Terme und Gleichungen"
+    niveau: kennen
+  gym8-lb1-lz3:
+    lehrplan: "Einblick gewinnen in das Lösen von Ungleichungen"
+    niveau: einblick
+
+level:
+  - id: gym8-lb1-l01
+    titel: "Terme lesen"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-term-struktur, t8-term-text, t8-termwert]
+
+  - id: gym8-lb1-l02
+    titel: "Zusammenfassen und Klammern auflösen"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-zusammenfassen, t8-ausmultiplizieren-monom, t8-klammern-verschachtelt]
+
+  - id: gym8-lb1-l03
+    titel: "Summe mal Summe"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-summe-mal-summe, t8-term-gleichwertig]
+
+  - id: gym8-lb1-l04
+    titel: "Ausklammern"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-ausklammern]
+
+  - id: gym8-lb1-l05
+    titel: "Binomische Formeln"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-binom-geometrie, t8-binom-ausmultiplizieren, t8-binom-ergaenzen, t8-binom-faktorisieren]
+
+  - id: gym8-lb1-l06
+    titel: "Bruchterme vereinfachen"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-bruchterm-multiplizieren, t8-bruchterm-faktorisieren-kuerzen]
+
+  - id: gym8-lb1-l07
+    titel: "Lineare Gleichungen"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-gleichung-klammern, t8-gleichung-brueche, t8-gleichung-summe-mal-summe, t8-gleichung-sonderfaelle]
+
+  - id: gym8-lb1-l08
+    titel: "Gleichungen aus dem Alltag"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-gleichung-aufstellen]
+
+  - id: gym8-lb1-l09
+    titel: "Produkt gleich null"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-nullprodukt, t8-gleichung-ausklammern-null]
+
+  - id: gym8-lb1-l10
+    titel: "Bruchgleichungen"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-bruchgleichung]
+
+  - id: gym8-lb1-l11
+    titel: "Formeln umstellen"
+    lernziel: gym8-lb1-lz1
+    bausteine: [t8-formel-umstellen]
+
+  - id: gym8-lb1-l12
+    titel: "Ungleichungen"
+    lernziel: gym8-lb1-lz3
+    bausteine: [t8-ungleichung]
+
+  - id: gym8-lb1-l13
+    titel: "Mit dem CAS arbeiten"
+    lernziel: gym8-lb1-lz2
+    bausteine: [t8-cas-ergebnisse]
+    hinweis: "Offene Frage an Timon: als Level in der App oder nur im Unterricht/in der Nachhilfe?"
+
+geheime_level:
+  - id: gym8-lb1-g1
+    titel: "Rechentricks mit binomischen Formeln"
+    idee: "Kopfrechnen wie 49 · 51 oder 98² über binomische Formeln; eigene Tricks erfinden und begründen."
+    freischalten_durch: gym8-lb1-l05
+    afb: [III]
+    testrelevant: false
+
+  - id: gym8-lb1-g2
+    titel: "Term-Detektiv"
+    idee: "Zahlen-Behauptungen mit Termen beweisen oder widerlegen (z. B. Summe von drei aufeinanderfolgenden Zahlen)."
+    freischalten_durch: gym8-lb1-l03
+    afb: [III]
+    testrelevant: false
+
+  - id: gym8-lb1-g3
+    titel: "Vorgriff: Quadratische Gleichungen"
+    idee: "Gleichungen wie x² = 49 oder x² − 6x + 9 = 0 mit binomischen Formeln knacken (Ausblick auf Kl. 9)."
+    freischalten_durch: gym8-lb1-l09
+    afb: [III]
+    testrelevant: false

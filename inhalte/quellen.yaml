@@ -1,0 +1,33 @@
+# Quellen für die Inhalte. Jeder Lernbereich, jedes Lernziel und jeder Baustein
+# verweist über `quelle` auf einen Eintrag hier (plus Seite).
+# Die PDFs selbst liegen NICHT im Repository; Bezug über schulportal.sachsen.de/lplandb.
+
+lp-gy-2021:
+  titel: "Lehrplan Gymnasium Mathematik (Sachsen)"
+  fassung: "2004/2009/2019/2021; Kl. 5–8 gültig ab 1. August 2021"
+  datei: "lp_gy_mathematik_2021.pdf"
+  quelle: "https://www.schulportal.sachsen.de/lplandb/"
+  hinweis: "Seitenangaben beziehen sich auf die gedruckte Seitenzahl im Lehrplan."
+
+lp-os-2019:
+  titel: "Lehrplan Oberschule Mathematik (Sachsen)"
+  fassung: "2019"
+  datei: "lp_os_mathematik_2019.pdf"
+  quelle: "https://www.schulportal.sachsen.de/lplandb/"
+  hinweis: "Noch nicht ausgewertet (Ausbauwelle Oberschule)."
+
+ih-terme-gleichungen:
+  titel: "Interpretationshilfe zum sächsischen Lehrplan für den Umgang mit Termen und Gleichungen"
+  herausgeber: "Fachberater Sachsens für Mathematik an Gymnasien"
+  fassung: "August 2017, Tabellen Kl. 5/6 aktualisiert 2019"
+  datei: "Interpretationshilfe_für_den_Umgang_mit_Termen_und_Gleichungen.pdf"
+  hinweis: >
+    Enthält pro Klassenstufe hilfsmittelfreies Basiswissen mit Beispielen je
+    Anforderungsbereich (AB I–III). Wird zur Einstufung der AFB genutzt.
+    Die Beispielaufgaben werden NICHT übernommen; Generatoren erzeugen eigene Aufgaben
+    vergleichbarer Struktur.
+
+ih-operatoren-cas-11-12:
+  titel: "Interpretationshilfe zur Verwendung der Operatoren / CAS, Jahrgangsstufen 11/12"
+  datei: "Interpretationshilfe_zur_Verwendung_der_Operatoren_CAS_Jahrgangsstufen_11_12.pdf"
+  hinweis: "Für die Ausbauwelle Oberstufe; Operatoren ggf. schon früher für Aufgabentexte nutzen."
