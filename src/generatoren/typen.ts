@@ -87,5 +87,8 @@ export interface Generator {
 
 export class GeneratorFehler extends Error {}
 
-/** Malpunkt-Schreibweise wie im sächsischen Lehrplan (3·x·y). Zentral umschaltbar. */
-export const ANZEIGE = { malpunkt: true } as const;
+/**
+ * Anzeige-Schreibweise (Entscheidung 20.11.2026, SPEC 5.5): kein Malpunkt innerhalb eines
+ * Glieds (3xy), aber Malpunkt vor/zwischen Klammern (−2a·(5b² − 3a)). Zentral umschaltbar.
+ */
+export const ANZEIGE = { malpunkt: false } as const;

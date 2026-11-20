@@ -262,9 +262,9 @@ describe('t8-ausmultiplizieren-monom', () => {
     });
     expect(r).toMatchInlineSnapshot(`
       [
-        "−2·a·(5·b² − 3·a) = −10·a·b² + 6·a²",
-        "m·n·(8·n² + 8) = 8·m·n³ + 8·m·n",
-        "−4·m·n·(3·m − 4·n) = −12·m²·n + 16·m·n²",
+        "−2a·(5b² − 3a) = −10ab² + 6a²",
+        "mn·(8n² + 8) = 8mn³ + 8mn",
+        "−4mn·(3m − 4n) = −12m²n + 16mn²",
       ]
     `);
   });

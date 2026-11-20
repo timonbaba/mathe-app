@@ -1,6 +1,6 @@
 # SPEC – Mathe-Lern-App (Arbeitstitel)
 
-Stand: 20.11.2026 · Version 1.1 (v1.0 freigegeben am 20.11.2026; Änderungen siehe Abschnitt 14)
+Stand: 20.11.2026 · Version 1.2 (v1.0 freigegeben am 20.11.2026; Änderungen siehe Abschnitt 14)
 
 Hinweise (Markierungen „[fest]“ kennzeichnen Vorgaben aus Timons ursprünglichem Projektbriefing):
 - Alle Festlegungen in diesem Dokument sind freigegeben. Zahlenwerte bei Meisterung, Sternen, Fehlereinordnung und Test-Einschätzung sind **Startwerte** und werden nach dem Pilot anhand echter Daten überprüft (Abschnitt 14).
@@ -163,6 +163,7 @@ Generator-Versionen: Ändert sich ein Generator inhaltlich, steigt die Version; 
 
 ### 5.5 Schreibweisen und Sonderregeln
 
+- **Malpunkt:** in der Anzeige kein Malpunkt innerhalb eines Glieds (`3xy`, `−2a²b`), aber vor und zwischen Klammern (`−2a·(5b² − 3a)`, `(x + 1)·(x − 2)`) und zwischen Zahlen (`3·4`). Eingaben werden mit und ohne Malpunkt akzeptiert.
 - Lösungsmengen: `L = { … }`; keine Lösung: `L = { }` (Eingabe `∅` wird ebenfalls akzeptiert); unendlich viele Lösungen in Kl. 8: `L = ℚ`.
 - **Bruchgleichungen:** Die Werte, für die ein Nenner null wird, müssen angegeben werden (z. B. „a ≠ 0, a ≠ 1“); sie gehören zur Bewertung.
 - **Bruchterme:** Ausgeschlossene Werte werden als Hinweis gezeigt, aber nicht bewertet.
@@ -182,6 +183,8 @@ Bewertung nach **Meisterung statt „bestanden“**. [fest] Die folgenden Kriter
 | richtig nach Denkanstoß | 0,75 |
 | richtig nach Ansatz | 0,5 |
 | richtig nach Lösungsweg / falsch | 0 |
+
+**Richtiger Wert, aber noch nicht fertig:** Ist eine Eingabe gleichwertig zur Lösung, aber nicht in der verlangten Form (z. B. noch eine Klammer, nicht zusammengefasst), meldet die App „Der Wert stimmt, aber …“ und der Schüler rechnet weiter. Das zählt weder als Fehler noch als Versuch; gewertet wird erst die fertige Antwort. Unlesbare Eingaben zählen ebenfalls nicht als Versuch.
 
 ### 6.2 Stufen pro Baustein
 
@@ -486,5 +489,8 @@ Hinweise:
 | 20.11.2026 | Bruchgleichungen: ausgeschlossene Werte müssen angegeben werden; bei Bruchtermen nur Hinweis (5.5). |
 | 20.11.2026 | Notation Sonderfälle: `L = { }` (auch `∅` akzeptiert) und `L = ℚ` (5.5). |
 | 20.11.2026 | Zweiter Pilot-Lernbereich: Kl. 8, LB 3 „Funktionen und lineare Gleichungssysteme“ (13). |
+
+| 20.11.2026 | Malpunkt-Schreibweise: kein Malpunkt innerhalb eines Glieds, aber vor/zwischen Klammern (5.5). |
+| 20.11.2026 | Gleichwertige, aber nicht fertige Eingabe: Hinweis, kein Fehler, kein Versuch (6.1). |
 
 **Nach dem Pilot zu überprüfen:** alle Schwellenwerte (Meisterung, Sterne, systematische Fehler, Test-Einschätzung) anhand der echten Versuchsdaten.
