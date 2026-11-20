@@ -56,14 +56,24 @@ function zieheZweiTeile(z: Zufall, vars: readonly string[]): Summe {
   const f1 = faktorGlied(z.ganzzahlOhne(-6, 6, [0]), zufallsMonom(z, vars, 1));
   const innen1 = klammerInhalt(z, vars, 2);
   const produkte = innen1.map((g) => gliedMal(f1, g));
-  if (z.mitWahrscheinlichkeit(0.5)) {
+  if (z.mitWahrscheinlichkeit(0.3)) {
     // F₁·(…) ± G, wobei G gleichartig zu einem Produkt ist
     const ziel = z.auswahl(produkte);
     return [kl(f1, alsSumme(innen1)), gl(z.ganzzahlOhne(-12, 12, [0]), ziel.monom)];
   }
-  // F₁·(…) ± F₂·(…)
-  const f2 = faktorGlied(z.ganzzahlOhne(-6, 6, [0]), zufallsMonom(z, vars, 1));
-  const innen2 = klammerInhalt(z, vars, 2);
+  // F₁·(…) ± F₂·(…), wobei ein Produkt der zweiten Klammer gleichartig zu einem der ersten ist
+  const ziel = z.auswahl(produkte).monom;
+  const zielVars = Object.keys(ziel).filter((v) => (ziel[v] ?? 0) > 0);
+  const f2Monom: Record<string, number> = {};
+  if (zielVars.length > 0 && z.mitWahrscheinlichkeit(0.5)) f2Monom[z.auswahl(zielVars)] = 1;
+  const rest: Record<string, number> = {};
+  for (const v of zielVars) {
+    const e = (ziel[v] ?? 0) - (f2Monom[v] ?? 0);
+    if (e > 0) rest[v] = e;
+  }
+  const f2 = faktorGlied(z.ganzzahlOhne(-6, 6, [0]), f2Monom);
+  const innen2 = [faktorGlied(z.ganzzahlOhne(-9, 9, [0]), rest), faktorGlied(z.ganzzahlOhne(-9, 9, [0]), zufallsMonom(z, vars, 2))];
+  sortiereGlieder(innen2);
   return [kl(f1, alsSumme(innen1)), kl(f2, alsSumme(innen2))];
 }
 

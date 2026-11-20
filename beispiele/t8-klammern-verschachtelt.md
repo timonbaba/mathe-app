@@ -7,84 +7,83 @@
 
 ### 1. Löse die Klammern auf und fasse zusammen.  (Seed 0)
 
-**Aufgabe:** −3c·(7a − 3·(3a + 1))
+**Aufgabe:** 4a·(3a + 7) − 5·(5a² + 8b²)
 
-**Lösung:** 6ac + 9c
+**Lösung:** −13a² − 40b² + 28a
 
 <details><summary>Hilfen</summary>
 
-1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** −3c·(7a − 3·(3a + 1)) = −3c·(7a − 9a − 3)
+1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
+2. **Ansatz:** 4a·(3a + 7) − 5·(5a² + 8b²) = 12a² + 28a − 25a² − 40b²
 3. **Lösungsweg:**
-   - −3c·(7a − 3·(3a + 1)) = −3c·(7a − 9a − 3)
-   - = −3c·(−2a − 3)
-   - = 6ac + 9c
+   - 4a·(3a + 7) − 5·(5a² + 8b²) = 12a² + 28a − 25a² − 40b²
+   - = −13a² − 40b² + 28a
 
 </details>
 
 ### 2. Löse die Klammern auf und fasse zusammen.  (Seed 1)
 
-**Aufgabe:** −4·(3b − (9b − 9))
+**Aufgabe:** −3c·(4 − 3·(4c − 2))
 
-**Lösung:** 24b − 36
+**Lösung:** 36c² − 30c
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** −4·(3b − (9b − 9)) = −4·(3b − 9b + 9)
+2. **Ansatz:** −3c·(4 − 3·(4c − 2)) = −3c·(4 − 12c + 6)
 3. **Lösungsweg:**
-   - −4·(3b − (9b − 9)) = −4·(3b − 9b + 9)
-   - = −4·(−6b + 9)
-   - = 24b − 36
+   - −3c·(4 − 3·(4c − 2)) = −3c·(4 − 12c + 6)
+   - = −3c·(−12c + 10)
+   - = 36c² − 30c
 
 </details>
 
 ### 3. Löse die Klammern auf und fasse zusammen.  (Seed 2)
 
-**Aufgabe:** 5·(4mn + 1) + 10mn
+**Aufgabe:** 4·(2a + 8) + 2·(5ab − 2)
 
-**Lösung:** 30mn + 5
+**Lösung:** 10ab + 8a + 28
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 5·(4mn + 1) + 10mn = 20mn + 5 + 10mn
+2. **Ansatz:** 4·(2a + 8) + 2·(5ab − 2) = 8a + 32 + 10ab − 4
 3. **Lösungsweg:**
-   - 5·(4mn + 1) + 10mn = 20mn + 5 + 10mn
-   - = 30mn + 5
+   - 4·(2a + 8) + 2·(5ab − 2) = 8a + 32 + 10ab − 4
+   - = 10ab + 8a + 28
 
 </details>
 
 ### 4. Löse die Klammern auf und fasse zusammen.  (Seed 3)
 
-**Aufgabe:** 4a·(4c − 3·(4a + 9c))
+**Aufgabe:** 2c·(3c + (9a + 9c))
 
-**Lösung:** −48a² − 92ac
+**Lösung:** 18ac + 24c²
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** 4a·(4c − 3·(4a + 9c)) = 4a·(4c − 12a − 27c)
+2. **Ansatz:** 2c·(3c + (9a + 9c)) = 2c·(3c + 9a + 9c)
 3. **Lösungsweg:**
-   - 4a·(4c − 3·(4a + 9c)) = 4a·(4c − 12a − 27c)
-   - = 4a·(−12a − 23c)
-   - = −48a² − 92ac
+   - 2c·(3c + (9a + 9c)) = 2c·(3c + 9a + 9c)
+   - = 2c·(9a + 12c)
+   - = 18ac + 24c²
 
 </details>
 
 ### 5. Löse die Klammern auf und fasse zusammen.  (Seed 4)
 
-**Aufgabe:** 5m·(8n + 4) − 3m
+**Aufgabe:** 6·(5a + 4) + 7
 
-**Lösung:** 40mn + 17m
+**Lösung:** 30a + 31
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 5m·(8n + 4) − 3m = 40mn + 20m − 3m
+2. **Ansatz:** 6·(5a + 4) + 7 = 30a + 24 + 7
 3. **Lösungsweg:**
-   - 5m·(8n + 4) − 3m = 40mn + 20m − 3m
-   - = 40mn + 17m
+   - 6·(5a + 4) + 7 = 30a + 24 + 7
+   - = 30a + 31
 
 </details>
 
@@ -107,66 +106,65 @@
 
 ### 7. Löse die Klammern auf und fasse zusammen.  (Seed 6)
 
-**Aufgabe:** −2·(5 + 2·(9b − 9))
+**Aufgabe:** 4·(4a² + 8a) + 12a²
 
-**Lösung:** −36b + 26
+**Lösung:** 28a² + 32a
 
 <details><summary>Hilfen</summary>
 
-1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** −2·(5 + 2·(9b − 9)) = −2·(5 + 18b − 18)
+1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
+2. **Ansatz:** 4·(4a² + 8a) + 12a² = 16a² + 32a + 12a²
 3. **Lösungsweg:**
-   - −2·(5 + 2·(9b − 9)) = −2·(5 + 18b − 18)
-   - = −2·(18b − 13)
-   - = −36b + 26
+   - 4·(4a² + 8a) + 12a² = 16a² + 32a + 12a²
+   - = 28a² + 32a
 
 </details>
 
 ### 8. Löse die Klammern auf und fasse zusammen.  (Seed 7)
 
-**Aufgabe:** 4·(3mn − 5) + 9
+**Aufgabe:** 4·(4x² − 2y) + 10x²
 
-**Lösung:** 12mn − 11
+**Lösung:** 26x² − 8y
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 4·(3mn − 5) + 9 = 12mn − 20 + 9
+2. **Ansatz:** 4·(4x² − 2y) + 10x² = 16x² − 8y + 10x²
 3. **Lösungsweg:**
-   - 4·(3mn − 5) + 9 = 12mn − 20 + 9
-   - = 12mn − 11
+   - 4·(4x² − 2y) + 10x² = 16x² − 8y + 10x²
+   - = 26x² − 8y
 
 </details>
 
 ### 9. Löse die Klammern auf und fasse zusammen.  (Seed 8)
 
-**Aufgabe:** 3n·(4mn − 5) + 2n
+**Aufgabe:** 6·(2c − 7) + 7
 
-**Lösung:** 12mn² − 13n
+**Lösung:** 12c − 35
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 3n·(4mn − 5) + 2n = 12mn² − 15n + 2n
+2. **Ansatz:** 6·(2c − 7) + 7 = 12c − 42 + 7
 3. **Lösungsweg:**
-   - 3n·(4mn − 5) + 2n = 12mn² − 15n + 2n
-   - = 12mn² − 13n
+   - 6·(2c − 7) + 7 = 12c − 42 + 7
+   - = 12c − 35
 
 </details>
 
 ### 10. Löse die Klammern auf und fasse zusammen.  (Seed 9)
 
-**Aufgabe:** 5·(7a² + a) + 4a²
+**Aufgabe:** 5·(7a² + a) − 3·(a² + 9a)
 
-**Lösung:** 39a² + 5a
+**Lösung:** 32a² − 22a
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 5·(7a² + a) + 4a² = 35a² + 5a + 4a²
+2. **Ansatz:** 5·(7a² + a) − 3·(a² + 9a) = 35a² + 5a − 3a² − 27a
 3. **Lösungsweg:**
-   - 5·(7a² + a) + 4a² = 35a² + 5a + 4a²
-   - = 39a² + 5a
+   - 5·(7a² + a) − 3·(a² + 9a) = 35a² + 5a − 3a² − 27a
+   - = 32a² − 22a
 
 </details>
 
@@ -174,107 +172,106 @@
 
 ### 11. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 0)
 
-**Aufgabe:** 5a·(6b² − 4b) − 5ab²
+**Aufgabe:** 4a·(3a + 7) − 5·(5a² + 8b²)
 
-- A) 25ab² − 20ab  ✅ richtig
-- B) 25ab² + 20ab  ❌ Fehlertyp VZ
-- C) 25ab² − 4b  ❌ Fehlertyp KL
+- A) −25a² − 40b² + 40a  ❌ Fehlertyp PO
+- B) −13a² + 8b² + 7  ❌ Fehlertyp KL
+- C) −13a² + 40b² + 28a  ❌ Fehlertyp VZ
+- D) −13a² − 40b² + 28a  ✅ richtig
 
-**Lösung:** 25ab² − 20ab
+**Lösung:** −13a² − 40b² + 28a
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 5a·(6b² − 4b) − 5ab² = 30ab² − 20ab − 5ab²
+2. **Ansatz:** 4a·(3a + 7) − 5·(5a² + 8b²) = 12a² + 28a − 25a² − 40b²
 3. **Lösungsweg:**
-   - 5a·(6b² − 4b) − 5ab² = 30ab² − 20ab − 5ab²
-   - = 25ab² − 20ab
+   - 4a·(3a + 7) − 5·(5a² + 8b²) = 12a² + 28a − 25a² − 40b²
+   - = −13a² − 40b² + 28a
 
 </details>
 
 ### 12. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 1)
 
-**Aufgabe:** −m·(2 − (8m − 6))
+**Aufgabe:** −3c·(4 − 3·(4c − 2))
 
-- A) 8m² − 4m  ❌ Fehlertyp VZ
-- B) 8m² − 4  ❌ Fehlertyp KL
-- C) 8m² − 8m  ✅ richtig
+- A) 36c² + 2  ❌ Fehlertyp KL
+- B) 36c² − 6c  ❌ Fehlertyp VZ
+- C) 36c² − 30c  ✅ richtig
+- D) 6c  ❌ Fehlertyp PO
 
-**Lösung:** 8m² − 8m
+**Lösung:** 36c² − 30c
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** −m·(2 − (8m − 6)) = −m·(2 − 8m + 6)
+2. **Ansatz:** −3c·(4 − 3·(4c − 2)) = −3c·(4 − 12c + 6)
 3. **Lösungsweg:**
-   - −m·(2 − (8m − 6)) = −m·(2 − 8m + 6)
-   - = −m·(−8m + 8)
-   - = 8m² − 8m
+   - −3c·(4 − 3·(4c − 2)) = −3c·(4 − 12c + 6)
+   - = −3c·(−12c + 10)
+   - = 36c² − 30c
 
 </details>
 
 ### 13. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 2)
 
-**Aufgabe:** −3y·(6 + 3·(6x + 6))
+**Aufgabe:** 4·(2a + 8) + 2·(5ab − 2)
 
-- A) −54xy + 12  ❌ Fehlertyp KL
-- B) −54xy + 72y  ❌ Fehlertyp VZ
-- C) −54xy − 72y  ✅ richtig
+- A) 10ab + 8a + 36  ❌ Fehlertyp VZ
+- B) 10ab + 8a + 28  ✅ richtig
+- C) 10ab + 8a + 6  ❌ Fehlertyp KL
 
-**Lösung:** −54xy − 72y
+**Lösung:** 10ab + 8a + 28
 
 <details><summary>Hilfen</summary>
 
-1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** −3y·(6 + 3·(6x + 6)) = −3y·(6 + 18x + 18)
+1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
+2. **Ansatz:** 4·(2a + 8) + 2·(5ab − 2) = 8a + 32 + 10ab − 4
 3. **Lösungsweg:**
-   - −3y·(6 + 3·(6x + 6)) = −3y·(6 + 18x + 18)
-   - = −3y·(18x + 24)
-   - = −54xy − 72y
+   - 4·(2a + 8) + 2·(5ab − 2) = 8a + 32 + 10ab − 4
+   - = 10ab + 8a + 28
 
 </details>
 
 ### 14. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 3)
 
-**Aufgabe:** 4a·(4c − 3·(4a + 9c))
+**Aufgabe:** 2c·(3c + (9a + 9c))
 
-- A) 48a² + 124ac  ❌ Fehlertyp VZ
-- B) −48a² + 13c  ❌ Fehlertyp KL
-- C) −48a − 92ac  ❌ Fehlertyp PO
-- D) −48a² − 92ac  ✅ richtig
+- A) 18ac + 24c  ❌ Fehlertyp PO
+- B) 18ac + 24c²  ✅ richtig
+- C) 18ac + 12c  ❌ Fehlertyp KL
 
-**Lösung:** −48a² − 92ac
+**Lösung:** 18ac + 24c²
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** 4a·(4c − 3·(4a + 9c)) = 4a·(4c − 12a − 27c)
+2. **Ansatz:** 2c·(3c + (9a + 9c)) = 2c·(3c + 9a + 9c)
 3. **Lösungsweg:**
-   - 4a·(4c − 3·(4a + 9c)) = 4a·(4c − 12a − 27c)
-   - = 4a·(−12a − 23c)
-   - = −48a² − 92ac
+   - 2c·(3c + (9a + 9c)) = 2c·(3c + 9a + 9c)
+   - = 2c·(9a + 12c)
+   - = 18ac + 24c²
 
 </details>
 
 ### 15. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 4)
 
-**Aufgabe:** 4c·(8 − 2·(9c + 9))
+**Aufgabe:** 4a·(7 + 2·(8b − 2))
 
-- A) −72c² − 40c  ✅ richtig
-- B) 72c² + 104c  ❌ Fehlertyp VZ
-- C) −72c² + 17  ❌ Fehlertyp KL
-- D) −112c  ❌ Fehlertyp PO
+- A) 64ab + 12a  ✅ richtig
+- B) 64ab + 44a  ❌ Fehlertyp VZ
+- C) 64ab + 5  ❌ Fehlertyp KL
 
-**Lösung:** −72c² − 40c
+**Lösung:** 64ab + 12a
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** 4c·(8 − 2·(9c + 9)) = 4c·(8 − 18c − 18)
+2. **Ansatz:** 4a·(7 + 2·(8b − 2)) = 4a·(7 + 16b − 4)
 3. **Lösungsweg:**
-   - 4c·(8 − 2·(9c + 9)) = 4c·(8 − 18c − 18)
-   - = 4c·(−18c − 10)
-   - = −72c² − 40c
+   - 4a·(7 + 2·(8b − 2)) = 4a·(7 + 16b − 4)
+   - = 4a·(16b + 3)
+   - = 64ab + 12a
 
 </details>
 
@@ -302,83 +299,81 @@
 
 ### 17. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 6)
 
-**Aufgabe:** −2·(5 + 2·(9b − 9))
+**Aufgabe:** 3y·(9y² − 4y) − 9y²
 
-- A) −36b + 46  ❌ Fehlertyp VZ
-- B) −36b − 4  ❌ Fehlertyp KL
-- C) −36b + 26  ✅ richtig
+- A) 27y³ − 4y − 9y²  ❌ Fehlertyp KL
+- B) 27y³ − 21y²  ✅ richtig
+- C) 18y² − 12y  ❌ Fehlertyp PO
+- D) 27y³ + 3y²  ❌ Fehlertyp VZ
 
-**Lösung:** −36b + 26
+**Lösung:** 27y³ − 21y²
 
 <details><summary>Hilfen</summary>
 
-1. **Denkanstoß:** Arbeite von innen nach außen: Löse zuerst die innere Klammer auf und fasse in der äußeren Klammer zusammen. Multipliziere erst danach aus.
-2. **Ansatz:** −2·(5 + 2·(9b − 9)) = −2·(5 + 18b − 18)
+1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
+2. **Ansatz:** 3y·(9y² − 4y) − 9y² = 27y³ − 12y² − 9y²
 3. **Lösungsweg:**
-   - −2·(5 + 2·(9b − 9)) = −2·(5 + 18b − 18)
-   - = −2·(18b − 13)
-   - = −36b + 26
+   - 3y·(9y² − 4y) − 9y² = 27y³ − 12y² − 9y²
+   - = 27y³ − 21y²
 
 </details>
 
 ### 18. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 7)
 
-**Aufgabe:** 4·(3mn − 5) + 9
+**Aufgabe:** 4·(4x² − 2y) + 10x²
 
-- A) 12mn + 29  ❌ Fehlertyp VZ
-- B) 12mn − 11  ✅ richtig
-- C) 12mn + 4  ❌ Fehlertyp KL
+- A) 26x² − 2y  ❌ Fehlertyp KL
+- B) 26x² + 8y  ❌ Fehlertyp VZ
+- C) 26x² − 8y  ✅ richtig
 
-**Lösung:** 12mn − 11
+**Lösung:** 26x² − 8y
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 4·(3mn − 5) + 9 = 12mn − 20 + 9
+2. **Ansatz:** 4·(4x² − 2y) + 10x² = 16x² − 8y + 10x²
 3. **Lösungsweg:**
-   - 4·(3mn − 5) + 9 = 12mn − 20 + 9
-   - = 12mn − 11
+   - 4·(4x² − 2y) + 10x² = 16x² − 8y + 10x²
+   - = 26x² − 8y
 
 </details>
 
 ### 19. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 8)
 
-**Aufgabe:** 3n·(4mn − 5) + 2n
+**Aufgabe:** 6·(2c − 7) + 7
 
-- A) 12mn − 13n  ❌ Fehlertyp PO
-- B) 12mn² + 17n  ❌ Fehlertyp VZ
-- C) 12mn² − 13n  ✅ richtig
-- D) 12mn² − 5 + 2n  ❌ Fehlertyp KL
+- A) 12c + 49  ❌ Fehlertyp VZ
+- B) 12c  ❌ Fehlertyp KL
+- C) 12c − 35  ✅ richtig
 
-**Lösung:** 12mn² − 13n
+**Lösung:** 12c − 35
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** 3n·(4mn − 5) + 2n = 12mn² − 15n + 2n
+2. **Ansatz:** 6·(2c − 7) + 7 = 12c − 42 + 7
 3. **Lösungsweg:**
-   - 3n·(4mn − 5) + 2n = 12mn² − 15n + 2n
-   - = 12mn² − 13n
+   - 6·(2c − 7) + 7 = 12c − 42 + 7
+   - = 12c − 35
 
 </details>
 
 ### 20. Welcher Term entsteht, wenn du die Klammern auflöst und zusammenfasst?  (Seed 9)
 
-**Aufgabe:** m·(m² − 7) + 7m³
+**Aufgabe:** 5·(7a² + a) − 3·(a² + 9a)
 
-- A) 8m³ − 7m  ✅ richtig
-- B) 8m³ + 7m  ❌ Fehlertyp VZ
-- C) 8m³ − 7  ❌ Fehlertyp KL
-- D) m² − 7m + 7m³  ❌ Fehlertyp PO
+- A) 32a² + 32a  ❌ Fehlertyp VZ
+- B) 32a² − 22a  ✅ richtig
+- C) 32a² + 10a  ❌ Fehlertyp KL
 
-**Lösung:** 8m³ − 7m
+**Lösung:** 32a² − 22a
 
 <details><summary>Hilfen</summary>
 
 1. **Denkanstoß:** Löse jede Klammer einzeln auf – jedes Glied in der Klammer wird mit dem Faktor davor multipliziert. Fasse danach gleichartige Glieder zusammen.
-2. **Ansatz:** m·(m² − 7) + 7m³ = m³ − 7m + 7m³
+2. **Ansatz:** 5·(7a² + a) − 3·(a² + 9a) = 35a² + 5a − 3a² − 27a
 3. **Lösungsweg:**
-   - m·(m² − 7) + 7m³ = m³ − 7m + 7m³
-   - = 8m³ − 7m
+   - 5·(7a² + a) − 3·(a² + 9a) = 35a² + 5a − 3a² − 27a
+   - = 32a² − 22a
 
 </details>
