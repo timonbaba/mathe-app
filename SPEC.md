@@ -493,4 +493,6 @@ Hinweise:
 | 20.11.2026 | Malpunkt-Schreibweise: kein Malpunkt innerhalb eines Glieds, aber vor/zwischen Klammern (5.5). |
 | 20.11.2026 | Gleichwertige, aber nicht fertige Eingabe: Hinweis, kein Fehler, kein Versuch (6.1). |
 
+| 20.11.2026 | Baustein „Gleichwertigkeit prüfen“ ohne Wertetabelle (verleitet zum Fehlschluss „gleiche Werte ⇒ gleichwertig“); stattdessen „Finde den Fehler“ und „Gegenbeispiel“. |
+
 **Nach dem Pilot zu überprüfen:** alle Schwellenwerte (Meisterung, Sterne, systematische Fehler, Test-Einschätzung) anhand der echten Versuchsdaten.

@@ -39,7 +39,7 @@ AFB = Anforderungsbereich · oH = ohne Hilfsmittel · Darstellung: sym = symboli
 | Baustein | Inhalt | AFB | oH | Darstellung | Fehlertypen | braucht |
 |---|---|---|---|---|---|---|
 | Summe mal Summe | Zwei Summen multiplizieren und zusammenfassen (Typ (x − 3)·(x + 2)); Flächenmodell. | I/II | ja | sym, graf | KL, VZ, ZF, PO | **Produkt mal Klammer ausmultiplizieren** |
-| Prüfen, ob zwei Terme gleichwertig sind | Durch Umformen oder Einsetzen prüfen; Gegenbeispiel finden; Fehler in Umformungen finden. | II/III | ja | sym, tab | KL, ZF, PO, VZ | **Werte in Terme einsetzen**, Produkt mal Klammer ausmultiplizieren |
+| Prüfen, ob zwei Terme gleichwertig sind | Durch Umformen oder Einsetzen prüfen; Gegenbeispiel finden; Fehler in Umformungen finden. (Keine Wertetabelle: Einsetzen kann nur Ungleichheit zeigen.) | II/III | ja | sym | KL, ZF, PO, VZ | **Werte in Terme einsetzen**, Produkt mal Klammer ausmultiplizieren |
 
 ### Level 4: Ausklammern
 

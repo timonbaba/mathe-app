@@ -55,12 +55,12 @@ bausteine:
 
   t8-term-gleichwertig:
     titel: "Prüfen, ob zwei Terme gleichwertig sind"
-    beschreibung: "Durch Umformen oder Einsetzen prüfen; Gegenbeispiel finden; Fehler in Umformungen finden."
+    beschreibung: "Durch Umformen oder Einsetzen prüfen; Gegenbeispiel finden; Fehler in Umformungen finden. (Keine Wertetabelle: Einsetzen kann nur Ungleichheit zeigen.)"
     klasse: 8
     quelle: [lp-gy-2021 S. 20 (Kl. 8, LB 1)]
     afb: [II, III]
     ohne_hm: true
-    darstellungen: [symbolisch, tabelle]
+    darstellungen: [symbolisch]
     fehlertypen: [KL, ZF, PO, VZ]
     voraussetzungen: [[t8-termwert, notwendig], [t8-ausmultiplizieren-monom, hilfreich]]
     status: geprueft
