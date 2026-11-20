@@ -64,8 +64,14 @@ export interface Aufgabe {
   /** Nur bei typ 'auswahl': Optionen in Anzeigereihenfolge. */
   readonly optionen?: readonly Auswahloption[];
   /**
+   * Nur bei typ 'fehler-finden': die vorgerechneten Zeilen nach der Aufgabe
+   * (jeweils ohne führendes „=“). Antwort ist der Index der ersten falschen Zeile.
+   */
+  readonly zeilen?: readonly Formel[];
+  /**
    * Prüft eine Antwort. Bei 'eingabe' die Schülereingabe als Text,
-   * bei 'auswahl' der Index der gewählten Option als Text ("0", "1", …).
+   * bei 'auswahl' der Index der gewählten Option als Text ("0", "1", …),
+   * bei 'fehler-finden' der Index der gewählten Zeile als Text.
    */
   pruefe(antwort: string): Bewertung;
 }

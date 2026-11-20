@@ -7,7 +7,13 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { GENERATOREN } from './index';
 import type { AFB, Aufgabentyp } from './typen';
 
-const ZEICHEN_JE_TYP: Record<string, string> = { eingabe: 'Eingabe', auswahl: 'Auswahl' };
+const ZEICHEN_JE_TYP: Record<string, string> = { eingabe: 'Eingabe', auswahl: 'Auswahl', 'fehler-finden': 'Finde den Fehler' };
+
+function anzahlKombinationen(g: (typeof GENERATOREN)[number]): number {
+  let n = 0;
+  for (const afb of g.afb) for (const typ of g.typen) { try { g.erzeuge(0, { afb, typ }); n++; } catch { /* nicht angeboten */ } }
+  return n;
+}
 
 mkdirSync('beispiele', { recursive: true });
 for (const g of GENERATOREN) {
@@ -21,13 +27,19 @@ for (const g of GENERATOREN) {
   let nr = 0;
   for (const afb of g.afb as AFB[]) {
     for (const typ of g.typen as Aufgabentyp[]) {
+      // nur angebotene Kombinationen (manche Generatoren koppeln Typ und AFB)
+      try { g.erzeuge(0, { afb, typ }); } catch { continue; }
       zeilen.push(`## AFB ${afb} · ${ZEICHEN_JE_TYP[typ] ?? typ}`, '');
       // insgesamt ca. 20 Beispiele je Generator, gleichmäßig auf AFB und Aufgabentypen verteilt
-      const jeKombination = Math.ceil(20 / (g.afb.length * g.typen.length));
+      const jeKombination = Math.ceil(20 / anzahlKombinationen(g));
       for (let seed = 0; seed < jeKombination; seed++) {
         const a = g.erzeuge(seed, { afb, typ });
         nr++;
         zeilen.push(`### ${nr}. ${a.anweisung}  (Seed ${seed})`, '', `**Aufgabe:** ${a.aufgabe.text}`, '');
+        if (a.zeilen) {
+          a.zeilen.forEach((z, i) => zeilen.push(`${i + 1}. = ${z.text}`));
+          zeilen.push('');
+        }
         if (a.optionen) {
           a.optionen.forEach((o, i) => zeilen.push(`- ${String.fromCharCode(65 + i)}) ${o.formel.text}${o.richtig ? '  ✅ richtig' : `  ❌ Fehlertyp ${o.fehlertyp}`}`));
           zeilen.push('');

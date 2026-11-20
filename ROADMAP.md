@@ -39,7 +39,8 @@ Stand:
 - [x] Gemeinsame Bausteine: Termbaum (Lösungswege, Fehler nachbilden), Pflichttests für Term-Generatoren
 - [x] Level 2 „Zusammenfassen und Klammern auflösen“ komplett (3 Generatoren, warten auf Sichtprüfung durch Timon):
   `t8-zusammenfassen`, `t8-ausmultiplizieren-monom`, `t8-klammern-verschachtelt`
-- [ ] Level 3 „Summe mal Summe“ (`t8-summe-mal-summe`, `t8-term-gleichwertig`)
+- [x] Level 3 „Summe mal Summe“ komplett (warten auf Sichtprüfung): `t8-summe-mal-summe`, `t8-term-gleichwertig` (neue Aufgabentypen „Finde den Fehler“ und „Gegenbeispiel“)
+- [ ] Level 4 „Ausklammern“ (`t8-ausklammern`)
 - [ ] weitere Level (insgesamt 26 Kl.-8-Bausteine + 13 Reparatur-Bausteine)
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige
