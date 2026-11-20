@@ -29,11 +29,23 @@ export function werteAus(k: Knoten, b: Record<string, Bruch>): Bruch {
 export function gleichwertigDurchEinsetzen(a: string, c: string, z: Zufall): boolean {
   const ka = leseTerm(a);
   const kc = leseTerm(c);
-  for (let i = 0; i < 4; i++) {
+  let geprueft = 0;
+  for (let i = 0; i < 40 && geprueft < 4; i++) {
     const b: Record<string, Bruch> = {};
-    for (const v of 'abcdmnpqrstuvwxyz') b[v] = Bruch.von(z.ganzzahl(-30, 30), z.ganzzahl(1, 7));
-    if (!werteAus(ka, b).gleich(werteAus(kc, b))) return false;
+    for (const v of 'abcdmnpqrstuvwxyzAFhlRVρπ') b[v] = Bruch.von(z.ganzzahl(-30, 30), z.ganzzahl(1, 7));
+    let wa: Bruch;
+    let wc: Bruch;
+    try {
+      wa = werteAus(ka, b);
+      wc = werteAus(kc, b);
+    } catch (e) {
+      if (e instanceof RangeError) continue; // Nenner 0 – andere Stelle
+      throw e;
+    }
+    if (!wa.gleich(wc)) return false;
+    geprueft++;
   }
+  if (geprueft < 4) throw new Error(`Zu wenige gültige Einsetzstellen: ${a} | ${c}`);
   return true;
 }
 
