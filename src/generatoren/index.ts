@@ -28,9 +28,11 @@ import type { Generator } from './typen';
 import { bruchAddieren, bruchKuerzen, bruchMultiplizieren } from './v-brueche';
 import { vorrang } from './v5-vorrang';
 import { potenzWurzel, rationalAddieren, rationalMultiplizieren } from './v7-rationale-zahlen';
+import { formelUmstellenKl7, gleichungInhaltlich, gleichungLinearKl7, gleichungVariableImNenner, termZusammenfassenKl7, zahlMalSumme } from './v7-terme-gleichungen';
 
 /** Generatoren der Reparatur-Bausteine aus Kl. 5–7 */
-export const REPARATUR_GENERATOREN: readonly Generator[] = [vorrang, bruchKuerzen, bruchAddieren, bruchMultiplizieren, rationalAddieren, rationalMultiplizieren, potenzWurzel];
+export const REPARATUR_GENERATOREN: readonly Generator[] = [vorrang, bruchKuerzen, bruchAddieren, bruchMultiplizieren, rationalAddieren, rationalMultiplizieren, potenzWurzel,
+  termZusammenfassenKl7, zahlMalSumme, gleichungInhaltlich, gleichungLinearKl7, gleichungVariableImNenner, formelUmstellenKl7];
 
 /** Generatoren der Kl.-8-Bausteine */
 export const GENERATOREN: readonly Generator[] = [

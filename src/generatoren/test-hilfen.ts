@@ -57,6 +57,8 @@ export interface Optionen {
   /** Grenzen für das Ergebnis */
   readonly maxKoeffizient: number;
   readonly maxHochzahl: number;
+  /** Brüche als Koeffizienten im Ergebnis erlaubt (z. B. ½·(6x + 3/4)); Standard: nur ganze Zahlen */
+  readonly bruchKoeffizienten?: boolean;
   /** Mindestanteil verschiedener Aufgaben je Kombination (Standard 0,95) */
   readonly mindestVielfalt?: number;
   /**
@@ -110,7 +112,7 @@ export function pflichttestsTermVereinfachen(gen: Generator, o: Optionen): Aufga
     for (const a of aufgaben) {
       for (const x of leseAlsPolynom(a.loesung.text)!.gliederSortiert()) {
         expect(x.koeffizient.betrag().vergleiche(o.maxKoeffizient), a.loesung.text).toBeLessThanOrEqual(0);
-        expect(x.koeffizient.istGanz()).toBe(true);
+        if (!o.bruchKoeffizienten) expect(x.koeffizient.istGanz()).toBe(true);
         for (const e of Object.values(x.monom)) expect(e).toBeLessThanOrEqual(o.maxHochzahl);
       }
     }

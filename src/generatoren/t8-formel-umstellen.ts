@@ -82,10 +82,12 @@ function leseAntwort(antwort: string, ziel: string): { term: Knoten | null; ziel
   }
 }
 
-export const formelUmstellen: Generator = {
-  id: 't8-formel-umstellen',
+/** Erzeugt einen Formel-Generator für einen Baustein (Kl. 8 und Reparatur-Baustein Kl. 7 teilen die Vorlagen). */
+export function formelGenerator(id: string): Generator {
+  return {
+  id,
   version: 1,
-  baustein: 't8-formel-umstellen',
+  baustein: id,
   afb: ['I', 'II', 'III'],
   darstellungen: ['symbolisch', 'text'],
   typen: ['eingabe', 'auswahl'],
@@ -136,3 +138,6 @@ export const formelUmstellen: Generator = {
     };
   },
 };
+}
+
+export const formelUmstellen = formelGenerator('t8-formel-umstellen');

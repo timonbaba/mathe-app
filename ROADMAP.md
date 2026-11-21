@@ -53,7 +53,7 @@ Stand:
 - [x] Level 13 „Mit dem CAS arbeiten“: `t8-cas-ergebnisse` (lesen und prüfen, ohne Gerätebedienung)
 - [x] **Alle 26 Kl.-8-Bausteine haben einen Generator** (376 Tests; Konsistenztest gegen `inhalte/`)
 - [ ] Sichtprüfung aller Beispiele durch Timon (`beispiele/`)
-- [ ] Generatoren für die 13 Reparatur-Bausteine aus Kl. 5–7
+- [x] Generatoren für die 13 Reparatur-Bausteine aus Kl. 5–7 (Rechenreihenfolge, Bruchrechnung, rationale Zahlen, Potenzen/Wurzeln, Terme, Gleichungen, Formeln)
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige
 - Generator-Schnittstelle (Seed, Lösung, Antwortprüfung, Fehlerdiagnose, Hilfen)
