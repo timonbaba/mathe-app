@@ -61,8 +61,10 @@ Stack (Details und Begründung: `SPEC.md`, Abschnitt 12a):
 
 Ordnerstruktur:
 - `inhalte/` – Lehrplan-Inhalte als YAML (Lernbereiche, Level, Bausteine, Voraussetzungen, Fehlertypen); `inhalte/UEBERSICHT.md` wird erzeugt
-- `src/mathe/` – Mathe-Kern (exakte Brüche, deterministischer Zufall, später Terme/Gleichungen); keine Abhängigkeit von Oberfläche oder Datenbank
+- `src/mathe/` – Mathe-Kern (exakte Brüche, Zufall, Polynome, Term-Parser, Auswertung/Gleichwertigkeit von Bruchtermen, Lösungsmengen, Text→LaTeX); keine Abhängigkeit von Oberfläche oder Datenbank
 - `src/generatoren/` – Aufgabengeneratoren, je Generator eine Testdatei daneben; neue Generatoren in `src/generatoren/index.ts` eintragen
+  - gemeinsame Bausteine: `gemeinsam.ts` (Antwortprüfung Terme), `termbaum.ts` (Klammerterme Schritt für Schritt, Fehler nachbilden), `gleichung.ts` + `gleichung-hilfen.ts` (Gleichungen lösen wie im Unterricht), `binom.ts`, `faktorisierung.ts`, `bruchterm-hilfen.ts`, `rechenbaum.ts` (Fachsprache), `svg.ts` (Grafiken)
+  - Pflichttests: `test-hilfen.ts` (Term-Generatoren), `gleichung-tests.ts` (Gleichungs-Generatoren); `index.test.ts` prüft Generatoren gegen `inhalte/`
 - `beispiele/` – erzeugte Beispielaufgaben je Generator zur Sichtprüfung durch Timon
 - `werkzeuge/` – Hilfsskripte (Inhalte prüfen, Übersicht erzeugen; vorerst Python)
 - `.github/workflows/` – automatische Tests bei jedem Push

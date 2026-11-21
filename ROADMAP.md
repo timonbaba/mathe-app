@@ -49,7 +49,11 @@ Stand:
 - [x] Level 10 „Bruchgleichungen“: `t8-bruchgleichung` (ausgeschlossene Werte sind Pflichtangabe)
 - [x] Level 11 „Formeln umstellen“: `t8-formel-umstellen` (24 Formeln aus Geometrie/Physik)
 - [x] Level 12 „Ungleichungen“: `t8-ungleichung`
-- [ ] weitere Level (insgesamt 26 Kl.-8-Bausteine + 13 Reparatur-Bausteine)
+- [x] Level 8 „Gleichungen aus dem Alltag“: `t8-gleichung-aufstellen` (eigene Textvorlagen)
+- [x] Level 13 „Mit dem CAS arbeiten“: `t8-cas-ergebnisse` (lesen und prüfen, ohne Gerätebedienung)
+- [x] **Alle 26 Kl.-8-Bausteine haben einen Generator** (376 Tests; Konsistenztest gegen `inhalte/`)
+- [ ] Sichtprüfung aller Beispiele durch Timon (`beispiele/`)
+- [ ] Generatoren für die 13 Reparatur-Bausteine aus Kl. 5–7
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige
 - Generator-Schnittstelle (Seed, Lösung, Antwortprüfung, Fehlerdiagnose, Hilfen)
