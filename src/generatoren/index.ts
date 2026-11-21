@@ -5,6 +5,7 @@ import { binomAusmultiplizieren } from './t8-binom-ausmultiplizieren';
 import { binomErgaenzen } from './t8-binom-ergaenzen';
 import { binomFaktorisieren } from './t8-binom-faktorisieren';
 import { binomGeometrie } from './t8-binom-geometrie';
+import { bruchgleichung } from './t8-bruchgleichung';
 import { bruchtermFaktorisierenKuerzen } from './t8-bruchterm-faktorisieren-kuerzen';
 import { bruchtermMultiplizieren } from './t8-bruchterm-multiplizieren';
 import { gleichungBrueche } from './t8-gleichung-brueche';
@@ -25,4 +26,4 @@ export const GENERATOREN: readonly Generator[] = [
   termStruktur,
   termTextGenerator,
   termwert,
-  zusammenfassenGenerator, ausmultiplizierenMonom, klammernVerschachtelt, summeMalSumme, termGleichwertig, ausklammern, binomGeometrie, binomAusmultiplizieren, binomErgaenzen, binomFaktorisieren, bruchtermMultiplizieren, bruchtermFaktorisierenKuerzen, gleichungKlammern, gleichungBrueche, gleichungSummeMalSumme, gleichungSonderfaelle, nullprodukt, gleichungAusklammernNull];
+  zusammenfassenGenerator, ausmultiplizierenMonom, klammernVerschachtelt, summeMalSumme, termGleichwertig, ausklammern, binomGeometrie, binomAusmultiplizieren, binomErgaenzen, binomFaktorisieren, bruchtermMultiplizieren, bruchtermFaktorisierenKuerzen, gleichungKlammern, gleichungBrueche, gleichungSummeMalSumme, gleichungSonderfaelle, nullprodukt, gleichungAusklammernNull, bruchgleichung];
