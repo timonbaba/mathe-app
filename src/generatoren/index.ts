@@ -25,7 +25,14 @@ import { termwert } from './t8-termwert';
 import { ungleichung } from './t8-ungleichung';
 import { zusammenfassenGenerator } from './t8-zusammenfassen';
 import type { Generator } from './typen';
+import { bruchAddieren, bruchKuerzen, bruchMultiplizieren } from './v-brueche';
+import { vorrang } from './v5-vorrang';
+import { potenzWurzel, rationalAddieren, rationalMultiplizieren } from './v7-rationale-zahlen';
 
+/** Generatoren der Reparatur-Bausteine aus Kl. 5–7 */
+export const REPARATUR_GENERATOREN: readonly Generator[] = [vorrang, bruchKuerzen, bruchAddieren, bruchMultiplizieren, rationalAddieren, rationalMultiplizieren, potenzWurzel];
+
+/** Generatoren der Kl.-8-Bausteine */
 export const GENERATOREN: readonly Generator[] = [
   termStruktur,
   termTextGenerator,

@@ -4,7 +4,7 @@
  * Ausgabe: beispiele/<generator-id>.md (wird mit eingecheckt).
  */
 import { writeFileSync, mkdirSync } from 'node:fs';
-import { GENERATOREN } from './index';
+import { GENERATOREN, REPARATUR_GENERATOREN } from './index';
 import type { AFB, Aufgabentyp } from './typen';
 
 const ZEICHEN_JE_TYP: Record<string, string> = { eingabe: 'Eingabe', auswahl: 'Auswahl', 'fehler-finden': 'Finde den Fehler' };
@@ -16,7 +16,7 @@ function anzahlKombinationen(g: (typeof GENERATOREN)[number]): number {
 }
 
 mkdirSync('beispiele', { recursive: true });
-for (const g of GENERATOREN) {
+for (const g of [...GENERATOREN, ...REPARATUR_GENERATOREN]) {
   const zeilen: string[] = [
     `# Beispiele: ${g.id} (Version ${g.version})`,
     '',
