@@ -12,6 +12,7 @@ import { gleichungKlammern } from './t8-gleichung-klammern';
 import { gleichungSonderfaelle } from './t8-gleichung-sonderfaelle';
 import { gleichungSummeMalSumme } from './t8-gleichung-summe-mal-summe';
 import { klammernVerschachtelt } from './t8-klammern-verschachtelt';
+import { gleichungAusklammernNull, nullprodukt } from './t8-nullprodukt';
 import { summeMalSumme } from './t8-summe-mal-summe';
 import { termGleichwertig } from './t8-term-gleichwertig';
 import { termStruktur } from './t8-term-struktur';
@@ -24,4 +25,4 @@ export const GENERATOREN: readonly Generator[] = [
   termStruktur,
   termTextGenerator,
   termwert,
-  zusammenfassenGenerator, ausmultiplizierenMonom, klammernVerschachtelt, summeMalSumme, termGleichwertig, ausklammern, binomGeometrie, binomAusmultiplizieren, binomErgaenzen, binomFaktorisieren, bruchtermMultiplizieren, bruchtermFaktorisierenKuerzen, gleichungKlammern, gleichungBrueche, gleichungSummeMalSumme, gleichungSonderfaelle];
+  zusammenfassenGenerator, ausmultiplizierenMonom, klammernVerschachtelt, summeMalSumme, termGleichwertig, ausklammern, binomGeometrie, binomAusmultiplizieren, binomErgaenzen, binomFaktorisieren, bruchtermMultiplizieren, bruchtermFaktorisierenKuerzen, gleichungKlammern, gleichungBrueche, gleichungSummeMalSumme, gleichungSonderfaelle, nullprodukt, gleichungAusklammernNull];
