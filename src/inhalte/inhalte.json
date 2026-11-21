@@ -1,0 +1,1392 @@
+{
+ "bausteine": {
+  "t8-term-struktur": {
+   "titel": "Aufbau eines Terms erkennen",
+   "beschreibung": "Erkennen, ob ein Term insgesamt eine Summe, Differenz, ein Produkt oder ein Quotient ist, auch bei verknüpften Termen (z. B. Produkt aus Zahl und Summe); Term ↔ Rechenbaum.\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, „Erkennen der Struktur von Termen“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "grafisch"
+   ],
+   "fehlertypen": [
+    "VR"
+   ],
+   "voraussetzungen": [
+    [
+     "v5-vorrang",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-term-text": {
+   "titel": "Terme in Worte fassen und aus Worten aufstellen",
+   "beschreibung": "Wortbeschreibung ↔ Term (z. B. „das Dreifache der Summe aus einer Zahl und 2“), einfache Sachsituationen durch Terme beschreiben; Bedeutung einer Variablen angeben.\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, „Unterscheiden von Namen, Wert und Bedeutung einer Variablen“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "text",
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "TV",
+    "VR",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-term-struktur",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-termwert": {
+   "titel": "Werte in Terme einsetzen",
+   "beschreibung": "Termwerte berechnen, auch mit negativen Zahlen und Brüchen; Wertetabellen ausfüllen.",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)",
+    "ih-terme-gleichungen S. 5 („Termberechnung“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "tabelle"
+   ],
+   "fehlertypen": [
+    "VZ",
+    "VR",
+    "PO",
+    "BR"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-rational-multiplizieren",
+     "notwendig"
+    ],
+    [
+     "v7-potenz-wurzel",
+     "notwendig"
+    ],
+    [
+     "v6-bruch-addieren",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-term-gleichwertig": {
+   "titel": "Prüfen, ob zwei Terme gleichwertig sind",
+   "beschreibung": "Durch Umformen oder Einsetzen prüfen; Gegenbeispiel finden; Fehler in Umformungen finden. (Keine Wertetabelle: Einsetzen kann nur Ungleichheit zeigen.)",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)"
+   ],
+   "afb": [
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "KL",
+    "ZF",
+    "PO",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-termwert",
+     "notwendig"
+    ],
+    [
+     "t8-ausmultiplizieren-monom",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-zusammenfassen": {
+   "titel": "Terme mit mehreren Variablen zusammenfassen",
+   "beschreibung": "Gleichartige Glieder mit mehreren Variablen und Potenzen zusammenfassen (Typ 19ab − 17ac − ab).",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)",
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "I"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "ZF",
+    "VZ",
+    "PO"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-term-zusammenfassen",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-ausmultiplizieren-monom": {
+   "titel": "Produkt mal Klammer ausmultiplizieren",
+   "beschreibung": "Ein Produkt (Zahl, Variable, Potenz) mit einer Summe multiplizieren, auch Minus vor der Klammer und Potenzen in der Klammer (Typ 3·(4x + 2y), 15xy·(3x + 4xy)).\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)",
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "grafisch"
+   ],
+   "fehlertypen": [
+    "KL",
+    "VZ",
+    "PO"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-zahl-mal-summe",
+     "notwendig"
+    ],
+    [
+     "t8-zusammenfassen",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-summe-mal-summe": {
+   "titel": "Summe mal Summe",
+   "beschreibung": "Zwei Summen multiplizieren und zusammenfassen (Typ (x − 3)·(x + 2)); Flächenmodell.",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 („Summe · Summe“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "grafisch"
+   ],
+   "fehlertypen": [
+    "KL",
+    "VZ",
+    "ZF",
+    "PO"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-ausmultiplizieren-monom",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-klammern-verschachtelt": {
+   "titel": "Mehrere und verschachtelte Klammern auflösen",
+   "beschreibung": "Terme mit mehreren Klammern, Klammern in Klammern und anschließendem Zusammenfassen (Typ 15xy·(3x + 4xy) − 3x²y, a·(a − (3c + 2a))).\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)",
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "KL",
+    "VZ",
+    "ZF",
+    "VR"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-ausmultiplizieren-monom",
+     "notwendig"
+    ],
+    [
+     "t8-summe-mal-summe",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-ausklammern": {
+   "titel": "Ausklammern (Faktorisieren mit dem Distributivgesetz)",
+   "beschreibung": "Gemeinsame Faktoren ausklammern – Zahlen, Variablen und Potenzen (Typ x³ + x² = x²·(x + 1)).",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 („Faktorisieren mit Distributivgesetz, Ausklammern (auch bei Potenzen)“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "grafisch"
+   ],
+   "fehlertypen": [
+    "KL",
+    "PO",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-ausmultiplizieren-monom",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-binom-ausmultiplizieren": {
+   "titel": "Binomische Formeln: Klammern auflösen",
+   "beschreibung": "Alle drei binomischen Formeln zum Ausmultiplizieren nutzen, auch mit Koeffizienten und Vorfaktor (Typ (2 − a)², (a + 2b)·(a − 2b), 2·(x − 5)²).\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, „binomische Formeln“)",
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "grafisch"
+   ],
+   "fehlertypen": [
+    "PO",
+    "VZ",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-summe-mal-summe",
+     "notwendig"
+    ],
+    [
+     "v7-potenz-wurzel",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-binom-geometrie": {
+   "titel": "Binomische Formeln am Quadrat verstehen",
+   "beschreibung": "Geometrische Interpretation: Flächen eines zerlegten Quadrats/Rechtecks den Termen zuordnen.",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, „geometrische Interpretation“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "grafisch",
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "PO",
+    "DA"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-summe-mal-summe",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-binom-ergaenzen": {
+   "titel": "Binomische Formeln: Lücken ergänzen",
+   "beschreibung": "Fehlende Glieder ergänzen (Typ x² + ▢ + 9 = (x + ▢)²); Formel erkennen.",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)"
+   ],
+   "afb": [
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "PO",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-binom-ausmultiplizieren",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-binom-faktorisieren": {
+   "titel": "Binomische Formeln: Faktorisieren",
+   "beschreibung": "Summen mit binomischen Formeln als Produkt schreiben (Typ x² − 8x + 16, a² − b²), auch nach Ausklammern.",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 („mithilfe der binomischen Formeln … Faktorisieren“)"
+   ],
+   "afb": [
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "PO",
+    "VZ",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-binom-ergaenzen",
+     "notwendig"
+    ],
+    [
+     "t8-ausklammern",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-bruchterm-multiplizieren": {
+   "titel": "Bruchterme multiplizieren und kürzen",
+   "beschreibung": "Produkte von Bruchtermen mit Produkten im Zähler/Nenner vereinfachen (Typ 3/(8x) · x²/9).",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "BR",
+    "PO"
+   ],
+   "voraussetzungen": [
+    [
+     "v6-bruch-multiplizieren",
+     "notwendig"
+    ],
+    [
+     "t8-zusammenfassen",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-bruchterm-faktorisieren-kuerzen": {
+   "titel": "Bruchterme durch Faktorisieren kürzen",
+   "beschreibung": "Zähler/Nenner erst faktorisieren, dann kürzen (Typ (x³ + x²)/x², (a² − b²)/(a − b)); typischer Fehler „aus Summen kürzen“. Ausgeschlossene Werte nur als Hinweis, nicht bewertet.\n",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 (AB III)"
+   ],
+   "afb": [
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "BR",
+    "PO",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-ausklammern",
+     "notwendig"
+    ],
+    [
+     "t8-binom-faktorisieren",
+     "notwendig"
+    ],
+    [
+     "t8-bruchterm-multiplizieren",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-gleichung-klammern": {
+   "titel": "Lineare Gleichungen mit Klammern lösen",
+   "beschreibung": "Erst Klammern auflösen, dann umformen (Typ −3·(x + 0,2) = x + 1,8; 3 − (x + 4) = 5x).",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)",
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "UM",
+    "KL",
+    "VZ",
+    "ZF"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-linear",
+     "notwendig"
+    ],
+    [
+     "t8-ausmultiplizieren-monom",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-gleichung-brueche": {
+   "titel": "Lineare Gleichungen mit Brüchen lösen",
+   "beschreibung": "Bruchzahlen als Koeffizienten, z. B. durch Multiplizieren mit dem Hauptnenner (Typ 0 = −½x + 3/5).",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 4–5"
+   ],
+   "afb": [
+    "I",
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "UM",
+    "BR",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-linear",
+     "notwendig"
+    ],
+    [
+     "v6-bruch-addieren",
+     "notwendig"
+    ],
+    [
+     "v6-bruch-multiplizieren",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-gleichung-summe-mal-summe": {
+   "titel": "Gleichungen mit Summe mal Summe (x² fällt weg)",
+   "beschreibung": "Ausmultiplizieren, x²-Glieder heben sich auf, Rest linear (Typ (3x − 2)·(x + 5) − 3x² = 7).",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)",
+    "ih-terme-gleichungen S. 5"
+   ],
+   "afb": [
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "KL",
+    "UM",
+    "VZ",
+    "PO"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-summe-mal-summe",
+     "notwendig"
+    ],
+    [
+     "t8-gleichung-klammern",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-gleichung-sonderfaelle": {
+   "titel": "Keine Lösung oder unendlich viele Lösungen",
+   "beschreibung": "Erkennen und korrekt notieren: L = { } (auch ∅) bzw. L = ℚ.",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1)"
+   ],
+   "afb": [
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "UM"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-gleichung-klammern",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-gleichung-aufstellen": {
+   "titel": "Gleichungen aus Sachaufgaben aufstellen und lösen",
+   "beschreibung": "Zahlenrätsel, Geometrie- und Alltagssituationen: Variable festlegen, Gleichung aufstellen, lösen, Antwort.",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1; Ziele Kl. 8 „Mathematisieren“)"
+   ],
+   "afb": [
+    "II",
+    "III"
+   ],
+   "ohne_hm": false,
+   "darstellungen": [
+    "text"
+   ],
+   "fehlertypen": [
+    "TV",
+    "UM",
+    "EH"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-term-text",
+     "notwendig"
+    ],
+    [
+     "t8-gleichung-klammern",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-nullprodukt": {
+   "titel": "Produktgleichungen lösen (Produkt = 0)",
+   "beschreibung": "Satz vom Nullprodukt: Term1 · Term2 = 0 (Typ (2x + 4)·(3x − 1) = 0).",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 („Gleichungen, die auf Term1 · Term2 = 0 führen“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "UM",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-inhaltlich",
+     "notwendig"
+    ],
+    [
+     "v7-gleichung-linear",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-gleichung-ausklammern-null": {
+   "titel": "Gleichungen durch Ausklammern lösen",
+   "beschreibung": "Auf Produkt = 0 zurückführen (Typ x² − 3x = 0); typischer Fehler: durch x teilen und Lösung 0 verlieren.",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 (AB III)"
+   ],
+   "afb": [
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "UM",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-nullprodukt",
+     "notwendig"
+    ],
+    [
+     "t8-ausklammern",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-bruchgleichung": {
+   "titel": "Einfache Bruchgleichungen lösen",
+   "beschreibung": "Variable im Nenner, Quadrate entfallen beim Umformen (Typ 5/(a − 1) = 3/a); Werte, für die ein Nenner null wird, müssen angegeben werden und zählen zur Bewertung.\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, CAS-Beispiel)",
+    "ih-terme-gleichungen S. 5 („einfache Bruchgleichungen“, AB III)"
+   ],
+   "afb": [
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "UM",
+    "BR",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-variable-im-nenner",
+     "notwendig"
+    ],
+    [
+     "t8-gleichung-klammern",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-formel-umstellen": {
+   "titel": "Formeln umstellen",
+   "beschreibung": "Auch mit Klammern und Brüchen (Typ u = 2·(a + b) nach b; R = ρ·l/A nach l; A = (a + c)/2 · h nach c).",
+   "klasse": 8,
+   "quelle": [
+    "ih-terme-gleichungen S. 5 („Formeln umstellen“)"
+   ],
+   "afb": [
+    "I",
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "text"
+   ],
+   "fehlertypen": [
+    "UM",
+    "BR",
+    "KL"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-formel-umstellen",
+     "notwendig"
+    ],
+    [
+     "t8-ausmultiplizieren-monom",
+     "hilfreich"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-ungleichung": {
+   "titel": "Lineare Ungleichungen lösen (Einblick)",
+   "beschreibung": "Umformen wie bei Gleichungen; Relationszeichen umdrehen bei Multiplikation/Division mit negativer Zahl; Lösungsmenge am Zahlenstrahl.",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, „Einblick gewinnen in das Lösen von Ungleichungen“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "darstellungen": [
+    "symbolisch",
+    "grafisch"
+   ],
+   "fehlertypen": [
+    "UM",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-linear",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "t8-cas-ergebnisse": {
+   "titel": "CAS-Ergebnisse lesen und prüfen",
+   "beschreibung": "Ausgaben eines CAS zu komplexeren Termen/Gleichungen deuten, mit eigener Rechnung oder Probe vergleichen, gleichwertige Darstellungen erkennen. Die Bedienung eines konkreten CAS übt die App nicht. Nie im hilfsmittelfreien Teil einer Probe-Arbeit.\n",
+   "klasse": 8,
+   "quelle": [
+    "lp-gy-2021 S. 20 (Kl. 8, LB 1, „Kennen der Verwendung von CAS …“)"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": false,
+   "darstellungen": [
+    "symbolisch"
+   ],
+   "fehlertypen": [
+    "DA",
+    "UK"
+   ],
+   "voraussetzungen": [
+    [
+     "t8-term-gleichwertig",
+     "notwendig"
+    ]
+   ],
+   "status": "geprueft"
+  },
+  "v5-vorrang": {
+   "titel": "Rechenreihenfolge beachten",
+   "beschreibung": "Klammern, Potenzen, Punkt vor Strich; Rechengesetze vorteilhaft nutzen.",
+   "klasse": 5,
+   "quelle": [
+    "lp-gy-2021 S. 7 (Kl. 5, LB 1)",
+    "ih-terme-gleichungen S. 3"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "VR",
+    "RE"
+   ],
+   "voraussetzungen": []
+  },
+  "v5-bruch-kuerzen": {
+   "titel": "Brüche kürzen und erweitern",
+   "klasse": 5,
+   "quelle": [
+    "lp-gy-2021 S. 8 (Kl. 5, LB 2)"
+   ],
+   "afb": [
+    "I"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "BR",
+    "RE"
+   ],
+   "voraussetzungen": []
+  },
+  "v6-bruch-addieren": {
+   "titel": "Brüche addieren und subtrahieren",
+   "beschreibung": "Hauptnenner finden, gleichnamig machen; auch gemischt mit Dezimalzahlen.",
+   "klasse": 6,
+   "quelle": [
+    "lp-gy-2021 S. 12 (Kl. 6, LB 1)",
+    "ih-terme-gleichungen S. 3"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "BR",
+    "RE"
+   ],
+   "voraussetzungen": [
+    [
+     "v5-bruch-kuerzen",
+     "notwendig"
+    ]
+   ]
+  },
+  "v6-bruch-multiplizieren": {
+   "titel": "Brüche multiplizieren und dividieren",
+   "beschreibung": "Multiplizieren, Dividieren mit dem Kehrwert, vorher kürzen.",
+   "klasse": 6,
+   "quelle": [
+    "lp-gy-2021 S. 12 (Kl. 6, LB 1)",
+    "ih-terme-gleichungen S. 3"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "BR",
+    "RE"
+   ],
+   "voraussetzungen": [
+    [
+     "v5-bruch-kuerzen",
+     "notwendig"
+    ]
+   ]
+  },
+  "v7-rational-addieren": {
+   "titel": "Mit negativen Zahlen addieren und subtrahieren",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "VZ",
+    "RE"
+   ],
+   "voraussetzungen": [
+    [
+     "v6-bruch-addieren",
+     "hilfreich"
+    ]
+   ]
+  },
+  "v7-rational-multiplizieren": {
+   "titel": "Mit negativen Zahlen multiplizieren und dividieren",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "VZ",
+    "BR",
+    "RE"
+   ],
+   "voraussetzungen": [
+    [
+     "v6-bruch-multiplizieren",
+     "hilfreich"
+    ]
+   ]
+  },
+  "v7-potenz-wurzel": {
+   "titel": "Potenzen und Quadratwurzeln rationaler Zahlen",
+   "beschreibung": "Unterschied (−2)⁵ und −2⁵; Quadratzahlen und Quadratwurzeln.",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "PO",
+    "VZ",
+    "VR"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-rational-multiplizieren",
+     "notwendig"
+    ]
+   ]
+  },
+  "v7-term-zusammenfassen": {
+   "titel": "Gleichartige Glieder zusammenfassen",
+   "beschreibung": "Summen und Differenzen von Termen mit einer Variablen, z. B. Typ 2x − 8 + 3x + 4.",
+   "klasse": 7,
+   "quelle": [
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "ZF",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-rational-addieren",
+     "notwendig"
+    ]
+   ]
+  },
+  "v7-zahl-mal-summe": {
+   "titel": "Zahl mal Klammer (Distributivgesetz)",
+   "beschreibung": "Zahl · Summe ausmultiplizieren, auch Minus vor der Klammer; höchstens ein Faktor ist eine Summe.",
+   "klasse": 7,
+   "quelle": [
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "KL",
+    "VZ"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-rational-multiplizieren",
+     "notwendig"
+    ],
+    [
+     "v7-term-zusammenfassen",
+     "notwendig"
+    ]
+   ]
+  },
+  "v7-gleichung-inhaltlich": {
+   "titel": "Einfache Gleichungen im Kopf lösen",
+   "beschreibung": "Inhaltlich lösen, auch Produkt = 0 und einfache Betragsgleichungen.",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "UM",
+    "VZ",
+    "RE"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-rational-multiplizieren",
+     "hilfreich"
+    ]
+   ]
+  },
+  "v7-gleichung-linear": {
+   "titel": "Lineare Gleichungen in wenigen Schritten lösen",
+   "beschreibung": "Äquivalenzumformungen mit einfachem Zahlenmaterial, Variable auf beiden Seiten, einfache Klammer.",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "UM",
+    "VZ",
+    "KL",
+    "ZF"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-term-zusammenfassen",
+     "notwendig"
+    ],
+    [
+     "v7-zahl-mal-summe",
+     "hilfreich"
+    ],
+    [
+     "v7-gleichung-inhaltlich",
+     "hilfreich"
+    ]
+   ]
+  },
+  "v7-gleichung-variable-im-nenner": {
+   "titel": "Einfache Gleichungen mit der Variablen im Nenner",
+   "beschreibung": "Typ Zahl/Variable + Zahl = Zahl bzw. Verhältnisgleichung.",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "II"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "UM",
+    "BR"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-linear",
+     "notwendig"
+    ],
+    [
+     "v6-bruch-multiplizieren",
+     "hilfreich"
+    ]
+   ]
+  },
+  "v7-formel-umstellen": {
+   "titel": "Einfache Formeln umstellen",
+   "beschreibung": "Formeln aus Geometrie und Physik nach einer Größe umstellen (eine bis zwei Umformungen).",
+   "klasse": 7,
+   "quelle": [
+    "lp-gy-2021 S. 17 (Kl. 7, LB 2)",
+    "ih-terme-gleichungen S. 4"
+   ],
+   "afb": [
+    "I",
+    "II",
+    "III"
+   ],
+   "ohne_hm": true,
+   "fehlertypen": [
+    "UM",
+    "BR"
+   ],
+   "voraussetzungen": [
+    [
+     "v7-gleichung-linear",
+     "notwendig"
+    ]
+   ]
+  }
+ },
+ "welten": [
+  {
+   "id": "gym8-lb1",
+   "schulart": "gymnasium",
+   "klasse": 8,
+   "nummer": 1,
+   "titel": "Arbeiten mit Termen und Gleichungen",
+   "welt_name": "Terme und Gleichungen",
+   "richtstunden": 24,
+   "quelle": [
+    "lp-gy-2021 S. 20"
+   ],
+   "status": "geprueft",
+   "lernziele": {
+    "gym8-lb1-lz1": {
+     "lehrplan": "Beherrschen des Umgangs mit Variablen und Termen beim Lösen von linearen Gleichungen",
+     "niveau": "beherrschen",
+     "unterpunkte": [
+      "Erkennen der Struktur von Termen",
+      "Umformen von einfachen Termen und Gleichungen ohne Hilfsmittel",
+      "binomische Formeln"
+     ]
+    },
+    "gym8-lb1-lz2": {
+     "lehrplan": "Kennen der Verwendung von CAS beim Umformen komplexerer Terme und Gleichungen",
+     "niveau": "kennen"
+    },
+    "gym8-lb1-lz3": {
+     "lehrplan": "Einblick gewinnen in das Lösen von Ungleichungen",
+     "niveau": "einblick"
+    }
+   },
+   "level": [
+    {
+     "id": "gym8-lb1-l01",
+     "titel": "Terme lesen",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-term-struktur",
+      "t8-term-text",
+      "t8-termwert"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l02",
+     "titel": "Zusammenfassen und Klammern auflösen",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-zusammenfassen",
+      "t8-ausmultiplizieren-monom",
+      "t8-klammern-verschachtelt"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l03",
+     "titel": "Summe mal Summe",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-summe-mal-summe",
+      "t8-term-gleichwertig"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l04",
+     "titel": "Ausklammern",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-ausklammern"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l05",
+     "titel": "Binomische Formeln",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-binom-geometrie",
+      "t8-binom-ausmultiplizieren",
+      "t8-binom-ergaenzen",
+      "t8-binom-faktorisieren"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l06",
+     "titel": "Bruchterme vereinfachen",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-bruchterm-multiplizieren",
+      "t8-bruchterm-faktorisieren-kuerzen"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l07",
+     "titel": "Lineare Gleichungen",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-gleichung-klammern",
+      "t8-gleichung-brueche",
+      "t8-gleichung-summe-mal-summe",
+      "t8-gleichung-sonderfaelle"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l08",
+     "titel": "Gleichungen aus dem Alltag",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-gleichung-aufstellen"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l09",
+     "titel": "Produkt gleich null",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-nullprodukt",
+      "t8-gleichung-ausklammern-null"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l10",
+     "titel": "Bruchgleichungen",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-bruchgleichung"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l11",
+     "titel": "Formeln umstellen",
+     "lernziel": "gym8-lb1-lz1",
+     "bausteine": [
+      "t8-formel-umstellen"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l12",
+     "titel": "Ungleichungen",
+     "lernziel": "gym8-lb1-lz3",
+     "bausteine": [
+      "t8-ungleichung"
+     ]
+    },
+    {
+     "id": "gym8-lb1-l13",
+     "titel": "Mit dem CAS arbeiten",
+     "lernziel": "gym8-lb1-lz2",
+     "bausteine": [
+      "t8-cas-ergebnisse"
+     ],
+     "hinweis": "Nur CAS-Ergebnisse lesen und prüfen, keine Gerätebedienung. Nie im hilfsmittelfreien Teil der Probe-Arbeit."
+    }
+   ],
+   "geheime_level": [
+    {
+     "id": "gym8-lb1-g1",
+     "titel": "Rechentricks mit binomischen Formeln",
+     "idee": "Kopfrechnen wie 49 · 51 oder 98² über binomische Formeln; eigene Tricks erfinden und begründen.",
+     "freischalten_durch": "gym8-lb1-l05",
+     "afb": [
+      "III"
+     ],
+     "testrelevant": false
+    },
+    {
+     "id": "gym8-lb1-g2",
+     "titel": "Term-Detektiv",
+     "idee": "Zahlen-Behauptungen mit Termen beweisen oder widerlegen (z. B. Summe von drei aufeinanderfolgenden Zahlen).",
+     "freischalten_durch": "gym8-lb1-l03",
+     "afb": [
+      "III"
+     ],
+     "testrelevant": false
+    },
+    {
+     "id": "gym8-lb1-g3",
+     "titel": "Vorgriff: Quadratische Gleichungen",
+     "idee": "Gleichungen wie x² = 49 oder x² − 6x + 9 = 0 mit binomischen Formeln knacken (Ausblick auf Kl. 9).",
+     "freischalten_durch": "gym8-lb1-l09",
+     "afb": [
+      "III"
+     ],
+     "testrelevant": false
+    }
+   ]
+  }
+ ],
+ "fehlertypen": {
+  "VZ": {
+   "name": "Vorzeichen",
+   "beschreibung": "Vorzeichen falsch übernommen, Vorzeichenregeln verletzt.",
+   "beispiel": "−3 · (−4) = −12",
+   "hinweis": "Schau dir die Vorzeichen noch einmal genau an."
+  },
+  "KL": {
+   "name": "Klammer",
+   "beschreibung": "Klammer falsch aufgelöst: nicht jedes Glied multipliziert, Minus vor der Klammer nicht auf alle Glieder angewendet, Summe · Summe unvollständig.\n",
+   "beispiel": "2 · (x + 3) = 2x + 3",
+   "hinweis": "Beim Auflösen der Klammer muss jedes Glied in der Klammer berücksichtigt werden."
+  },
+  "ZF": {
+   "name": "Zusammenfassen",
+   "beschreibung": "Ungleichartige Glieder zusammengefasst oder gleichartige übersehen.",
+   "beispiel": "3x + 2 = 5x",
+   "hinweis": "Nur gleichartige Glieder (gleiche Variable, gleicher Exponent) darf man zusammenfassen."
+  },
+  "VR": {
+   "name": "Rechenregeln / Vorrang",
+   "beschreibung": "Punkt vor Strich, Klammer zuerst, Potenz vor Punkt verletzt.",
+   "beispiel": "2 + 3 · 4 = 20",
+   "hinweis": "Denk an die Reihenfolge: Klammern, Potenzen, Punkt vor Strich."
+  },
+  "BR": {
+   "name": "Bruch",
+   "beschreibung": "Fehler beim Kürzen, Erweitern, Hauptnenner, Kehrwert; „aus Summen kürzen“.",
+   "beispiel": "1/2 + 1/3 = 2/5",
+   "hinweis": "Brüche: erst gleichnamig machen – und kürzen darf man nur Faktoren, nicht Summanden."
+  },
+  "PO": {
+   "name": "Potenzen / binomische Formeln",
+   "beschreibung": "Potenz falsch berechnet, x · x = 2x, binomische Formel ohne Mittelglied.",
+   "beispiel": "(a + b)² = a² + b²",
+   "hinweis": "Bei (a + b)² fehlt oft das Mittelglied 2ab."
+  },
+  "UM": {
+   "name": "Äquivalenzumformung",
+   "beschreibung": "Nur eine Seite umgeformt, falsche Gegenoperation, durch Term geteilt, der null sein kann, Relationszeichen bei Ungleichungen nicht umgedreht.\n",
+   "beispiel": "2x = 6 ⇒ x = 4",
+   "hinweis": "Was du auf einer Seite machst, musst du auf der anderen Seite genauso machen."
+  },
+  "EH": {
+   "name": "Einheiten / Größen",
+   "beschreibung": "Einheiten falsch umgerechnet oder vergessen.",
+   "beispiel": "1 m² = 100 cm²",
+   "hinweis": "Prüfe die Einheiten – bei Flächen und Volumen ändert sich die Umrechnungszahl."
+  },
+  "DA": {
+   "name": "Darstellung lesen / übertragen",
+   "beschreibung": "Fehler beim Ablesen oder Übertragen aus Graph, Tabelle, Abbildung.",
+   "beispiel": "Achsen vertauscht",
+   "hinweis": "Lies noch einmal genau ab: Welche Achse, welche Spalte?"
+  },
+  "TV": {
+   "name": "Textverständnis / Modellierung",
+   "beschreibung": "Falscher Ansatz aus Sachtext, falsche Größe als Variable, Antwort passt nicht zur Frage.",
+   "beispiel": "„das Doppelte der Summe“ als 2x + 3 statt 2 · (x + 3)",
+   "hinweis": "Lies den Text noch einmal Satz für Satz und übersetze ihn Stück für Stück."
+  },
+  "RE": {
+   "name": "Rechenfehler",
+   "beschreibung": "Reiner Rechenfehler beim Kopfrechnen/Einmaleins ohne Regelverstoß.",
+   "beispiel": "7 · 8 = 54",
+   "hinweis": "Da hat sich ein Rechenfehler eingeschlichen."
+  },
+  "UK": {
+   "name": "Unklassifiziert",
+   "beschreibung": "Antwort passt zu keinem bekannten Fehlermuster.",
+   "beispiel": null,
+   "hinweis": "Das stimmt noch nicht. Möchtest du einen Denkanstoß?"
+  }
+ }
+}

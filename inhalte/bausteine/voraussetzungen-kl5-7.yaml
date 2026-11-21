@@ -18,7 +18,7 @@ bausteine:
     titel: "Rechenreihenfolge beachten"
     beschreibung: "Klammern, Potenzen, Punkt vor Strich; Rechengesetze vorteilhaft nutzen."
     klasse: 5
-    quelle: [lp-gy-2021 S. 7 (Kl. 5, LB 1), ih-terme-gleichungen S. 3]
+    quelle: ["lp-gy-2021 S. 7 (Kl. 5, LB 1)", "ih-terme-gleichungen S. 3"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [VR, RE]
@@ -27,7 +27,7 @@ bausteine:
   v5-bruch-kuerzen:
     titel: "Brüche kürzen und erweitern"
     klasse: 5
-    quelle: [lp-gy-2021 S. 8 (Kl. 5, LB 2)]
+    quelle: ["lp-gy-2021 S. 8 (Kl. 5, LB 2)"]
     afb: [I]
     ohne_hm: true
     fehlertypen: [BR, RE]
@@ -37,7 +37,7 @@ bausteine:
     titel: "Brüche addieren und subtrahieren"
     beschreibung: "Hauptnenner finden, gleichnamig machen; auch gemischt mit Dezimalzahlen."
     klasse: 6
-    quelle: [lp-gy-2021 S. 12 (Kl. 6, LB 1), ih-terme-gleichungen S. 3]
+    quelle: ["lp-gy-2021 S. 12 (Kl. 6, LB 1)", "ih-terme-gleichungen S. 3"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [BR, RE]
@@ -47,7 +47,7 @@ bausteine:
     titel: "Brüche multiplizieren und dividieren"
     beschreibung: "Multiplizieren, Dividieren mit dem Kehrwert, vorher kürzen."
     klasse: 6
-    quelle: [lp-gy-2021 S. 12 (Kl. 6, LB 1), ih-terme-gleichungen S. 3]
+    quelle: ["lp-gy-2021 S. 12 (Kl. 6, LB 1)", "ih-terme-gleichungen S. 3"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [BR, RE]
@@ -56,7 +56,7 @@ bausteine:
   v7-rational-addieren:
     titel: "Mit negativen Zahlen addieren und subtrahieren"
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [VZ, RE]
@@ -65,7 +65,7 @@ bausteine:
   v7-rational-multiplizieren:
     titel: "Mit negativen Zahlen multiplizieren und dividieren"
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [VZ, BR, RE]
@@ -75,7 +75,7 @@ bausteine:
     titel: "Potenzen und Quadratwurzeln rationaler Zahlen"
     beschreibung: "Unterschied (−2)⁵ und −2⁵; Quadratzahlen und Quadratwurzeln."
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [PO, VZ, VR]
@@ -85,7 +85,7 @@ bausteine:
     titel: "Gleichartige Glieder zusammenfassen"
     beschreibung: "Summen und Differenzen von Termen mit einer Variablen, z. B. Typ 2x − 8 + 3x + 4."
     klasse: 7
-    quelle: [ih-terme-gleichungen S. 4]
+    quelle: ["ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [ZF, VZ]
@@ -95,7 +95,7 @@ bausteine:
     titel: "Zahl mal Klammer (Distributivgesetz)"
     beschreibung: "Zahl · Summe ausmultiplizieren, auch Minus vor der Klammer; höchstens ein Faktor ist eine Summe."
     klasse: 7
-    quelle: [ih-terme-gleichungen S. 4]
+    quelle: ["ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [KL, VZ]
@@ -107,7 +107,7 @@ bausteine:
     titel: "Einfache Gleichungen im Kopf lösen"
     beschreibung: "Inhaltlich lösen, auch Produkt = 0 und einfache Betragsgleichungen."
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [UM, VZ, RE]
@@ -117,7 +117,7 @@ bausteine:
     titel: "Lineare Gleichungen in wenigen Schritten lösen"
     beschreibung: "Äquivalenzumformungen mit einfachem Zahlenmaterial, Variable auf beiden Seiten, einfache Klammer."
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [I, II]
     ohne_hm: true
     fehlertypen: [UM, VZ, KL, ZF]
@@ -130,7 +130,7 @@ bausteine:
     titel: "Einfache Gleichungen mit der Variablen im Nenner"
     beschreibung: "Typ Zahl/Variable + Zahl = Zahl bzw. Verhältnisgleichung."
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [II]
     ohne_hm: true
     fehlertypen: [UM, BR]
@@ -140,7 +140,7 @@ bausteine:
     titel: "Einfache Formeln umstellen"
     beschreibung: "Formeln aus Geometrie und Physik nach einer Größe umstellen (eine bis zwei Umformungen)."
     klasse: 7
-    quelle: [lp-gy-2021 S. 17 (Kl. 7, LB 2), ih-terme-gleichungen S. 4]
+    quelle: ["lp-gy-2021 S. 17 (Kl. 7, LB 2)", "ih-terme-gleichungen S. 4"]
     afb: [I, II, III]
     ohne_hm: true
     fehlertypen: [UM, BR]
