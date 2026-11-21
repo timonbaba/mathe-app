@@ -20,7 +20,9 @@ import { ANZEIGE, type Formel } from './typen';
 
 export type Summand =
   | { readonly art: 'glied'; readonly glied: Glied }
-  | { readonly art: 'klammer'; readonly faktor: Glied; readonly innen: Summe };
+  | { readonly art: 'klammer'; readonly faktor: Glied; readonly innen: Summe }
+  /** Produkt zweier Klammern (a₁ + a₂)·(b₁ + b₂), mit Vorzeichen davor (+1 oder −1) */
+  | { readonly art: 'produkt'; readonly vorzeichen: 1 | -1; readonly a: readonly Glied[]; readonly b: readonly Glied[] };
 export type Summe = readonly Summand[];
 
 /** Wie wird ausmultipliziert? 'richtig' oder mit einem typischen Fehler. */
@@ -31,16 +33,23 @@ export const g = (k: number | Bruch, monom: Record<string, number> = {}): Summan
   glied: { koeffizient: k instanceof Bruch ? k : Bruch.von(k), monom },
 });
 export const kl = (faktor: Glied, innen: Summe): Summand => ({ art: 'klammer', faktor, innen });
+export const produkt = (a: readonly Glied[], b: readonly Glied[], vorzeichen: 1 | -1 = 1): Summand => ({ art: 'produkt', vorzeichen, a, b });
 export const glied = (k: number, monom: Record<string, number> = {}): Glied => ({ koeffizient: Bruch.von(k), monom });
 
 // --- Anzeige -------------------------------------------------------------------
 
 function istNegativ(s: Summand): boolean {
+  if (s.art === 'produkt') return s.vorzeichen === -1;
   return s.art === 'glied' ? s.glied.koeffizient.istNegativ() : s.faktor.koeffizient.istNegativ();
 }
 
 function betragText(s: Summand, ziel: 'text' | 'latex'): string {
   if (s.art === 'glied') return formatGlied({ ...s.glied, koeffizient: s.glied.koeffizient.betrag() }, ziel, ANZEIGE);
+  if (s.art === 'produkt') {
+    const a = format(s.a.map((x) => ({ art: 'glied' as const, glied: x })), ziel);
+    const b = format(s.b.map((x) => ({ art: 'glied' as const, glied: x })), ziel);
+    return ziel === 'latex' ? `\\left(${a}\\right) \\cdot \\left(${b}\\right)` : `(${a})·(${b})`;
+  }
   const f = { ...s.faktor, koeffizient: s.faktor.koeffizient.betrag() };
   const nurEins = f.koeffizient.gleich(1) && Object.keys(f.monom).length === 0;
   const innen = format(s.innen, ziel);
@@ -68,13 +77,19 @@ export function formelVon(summe: Summe): Formel {
 
 export function wert(summe: Summe): Polynom {
   return Polynom.summe(
-    summe.map((s) => (s.art === 'glied' ? Polynom.glied(s.glied.koeffizient, s.glied.monom) : Polynom.glied(s.faktor.koeffizient, s.faktor.monom).mal(wert(s.innen)))),
+    summe.map((s) =>
+      s.art === 'glied'
+        ? Polynom.glied(s.glied.koeffizient, s.glied.monom)
+        : s.art === 'produkt'
+          ? summeAlsPolynom(s.a).mal(summeAlsPolynom(s.b)).mal(Polynom.zahl(s.vorzeichen))
+          : Polynom.glied(s.faktor.koeffizient, s.faktor.monom).mal(wert(s.innen)),
+    ),
   );
 }
 
 // --- Umformen ------------------------------------------------------------------
 
-const hatKlammer = (s: Summe) => s.some((x) => x.art === 'klammer');
+const hatKlammer = (s: Summe) => s.some((x) => x.art === 'klammer' || x.art === 'produkt');
 const nurGlieder = (s: Summe): Glied[] => s.map((x) => (x.art === 'glied' ? x.glied : (() => { throw new Error('Klammer übrig'); })()));
 
 /** Fasst zusammen und sortiert in die übliche Reihenfolge (höchster Grad zuerst, alphabetisch). */
@@ -114,6 +129,25 @@ function ausmultiplizieren(faktor: Glied, innen: readonly Glied[], modus: Modus)
   });
 }
 
+/** (a₁ + a₂)·(b₁ + b₂) ausmultiplizieren – richtig oder mit typischem Fehler. */
+function produktAusmultiplizieren(p: { vorzeichen: 1 | -1; a: readonly Glied[]; b: readonly Glied[] }, modus: Modus): Glied[] {
+  let einzeln: Glied[];
+  if (modus === 'KL') {
+    // nur „erstes·erstes“ und „letztes·letztes“
+    einzeln = [gliedMal(p.a[0]!, p.b[0]!), gliedMal(p.a[p.a.length - 1]!, p.b[p.b.length - 1]!)];
+  } else {
+    einzeln = p.a.flatMap((x) =>
+      p.b.map((y) => {
+        if (modus === 'PO') return { koeffizient: x.koeffizient.mal(y.koeffizient), monom: monomMalOhneHochzahlen(x.monom, y.monom) };
+        const r = gliedMal(x, y);
+        if (modus === 'VZ' && x.koeffizient.istNegativ() && y.koeffizient.istNegativ()) return { ...r, koeffizient: r.koeffizient.negiert() };
+        return r;
+      }),
+    );
+  }
+  return p.vorzeichen === 1 ? einzeln : einzeln.map((x) => ({ ...x, koeffizient: x.koeffizient.negiert() }));
+}
+
 const alsSumme = (glieder: readonly Glied[]): Summe => glieder.map((x) => ({ art: 'glied', glied: x }));
 
 /** Ein Umformungsschritt; null, wenn nichts mehr zu tun ist. */
@@ -128,7 +162,9 @@ export function schritt(summe: Summe, modus: Modus = 'richtig'): Summe | null {
   }
   // 3. Klammern ausmultiplizieren
   if (hatKlammer(summe)) {
-    return summe.flatMap((s) => (s.art === 'glied' ? [s] : alsSumme(ausmultiplizieren(s.faktor, nurGlieder(s.innen), modus))));
+    return summe.flatMap((s) =>
+      s.art === 'glied' ? [s] : s.art === 'produkt' ? alsSumme(produktAusmultiplizieren(s, modus)) : alsSumme(ausmultiplizieren(s.faktor, nurGlieder(s.innen), modus)),
+    );
   }
   // 4. zusammenfassen
   const glieder = nurGlieder(summe);

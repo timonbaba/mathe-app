@@ -44,6 +44,7 @@ Stand:
 - [x] Level 4 „Ausklammern“ komplett (wartet auf Sichtprüfung): `t8-ausklammern`, mit Prüfung auf vollständiges Ausklammern
 - [x] Level 5 „Binomische Formeln“ komplett: `t8-binom-geometrie` (mit Grafik), `t8-binom-ausmultiplizieren`, `t8-binom-ergaenzen`, `t8-binom-faktorisieren`
 - [x] Level 6 „Bruchterme vereinfachen“: `t8-bruchterm-multiplizieren` (auch Division), `t8-bruchterm-faktorisieren-kuerzen` (5 Formen nach Interpretationshilfe)
+- [x] Level 7 „Lineare Gleichungen“: `t8-gleichung-klammern`, `t8-gleichung-brueche` (Hauptnenner), `t8-gleichung-summe-mal-summe`, `t8-gleichung-sonderfaelle` (L = { } / L = ℚ)
 - [ ] weitere Level (insgesamt 26 Kl.-8-Bausteine + 13 Reparatur-Bausteine)
 - Technisches Grundgerüst (Projekt, Testumgebung, automatische Tests bei jedem Push)
 - Mathe-Kern: exakte Bruchrechnung, Term-Darstellung, Term-Vergleich, Formel-Anzeige

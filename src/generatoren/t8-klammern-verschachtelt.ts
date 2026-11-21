@@ -87,7 +87,7 @@ function zieheVerschachtelt(z: Zufall, vars: readonly string[]): Summe {
 }
 
 function alleGlieder(s: Summe): Glied[] {
-  return s.flatMap((x) => (x.art === 'glied' ? [x.glied] : [x.faktor, ...alleGlieder(x.innen)]));
+  return s.flatMap((x) => (x.art === 'glied' ? [x.glied] : x.art === 'produkt' ? [...x.a, ...x.b] : [x.faktor, ...alleGlieder(x.innen)]));
 }
 
 function geeignet(t: Summe, form: Form): boolean {
@@ -101,6 +101,7 @@ function geeignet(t: Summe, form: Form): boolean {
   const pruefeKlammern = (s: Summe): boolean =>
     s.every((x) => {
       if (x.art === 'glied') return true;
+      if (x.art === 'produkt') return false; // kommt in diesem Generator nicht vor
       const innenGlieder = x.innen.filter((y) => y.art === 'glied').map((y) => (y as { glied: Glied }).glied);
       const schluessel = innenGlieder.map((g) => monomSchluessel(g.monom));
       // in keiner Klammer dürfen schon gleichartige Glieder stehen
@@ -108,7 +109,7 @@ function geeignet(t: Summe, form: Form): boolean {
       // jede Klammer beginnt mit einem positiven Glied (übliche Schreibweise)
       const erstes = x.innen[0]!;
       if (erstes.art === 'glied' && erstes.glied.koeffizient.istNegativ()) return false;
-      if (!x.innen.some((y) => y.art === 'klammer' || hatVariablen(y.glied.monom))) return false;
+      if (!x.innen.some((y) => y.art !== 'glied' || hatVariablen(y.glied.monom))) return false;
       const f = x.faktor;
       if (f.koeffizient.betrag().gleich(1) && !hatVariablen(f.monom) && x !== erste && form === 'zweiTeile') return false;
       return pruefeKlammern(x.innen);
