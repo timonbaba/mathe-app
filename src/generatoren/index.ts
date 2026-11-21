@@ -8,6 +8,7 @@ import { binomGeometrie } from './t8-binom-geometrie';
 import { bruchgleichung } from './t8-bruchgleichung';
 import { bruchtermFaktorisierenKuerzen } from './t8-bruchterm-faktorisieren-kuerzen';
 import { bruchtermMultiplizieren } from './t8-bruchterm-multiplizieren';
+import { formelUmstellen } from './t8-formel-umstellen';
 import { gleichungBrueche } from './t8-gleichung-brueche';
 import { gleichungKlammern } from './t8-gleichung-klammern';
 import { gleichungSonderfaelle } from './t8-gleichung-sonderfaelle';
@@ -19,6 +20,7 @@ import { termGleichwertig } from './t8-term-gleichwertig';
 import { termStruktur } from './t8-term-struktur';
 import { termTextGenerator } from './t8-term-text';
 import { termwert } from './t8-termwert';
+import { ungleichung } from './t8-ungleichung';
 import { zusammenfassenGenerator } from './t8-zusammenfassen';
 import type { Generator } from './typen';
 
@@ -26,4 +28,4 @@ export const GENERATOREN: readonly Generator[] = [
   termStruktur,
   termTextGenerator,
   termwert,
-  zusammenfassenGenerator, ausmultiplizierenMonom, klammernVerschachtelt, summeMalSumme, termGleichwertig, ausklammern, binomGeometrie, binomAusmultiplizieren, binomErgaenzen, binomFaktorisieren, bruchtermMultiplizieren, bruchtermFaktorisierenKuerzen, gleichungKlammern, gleichungBrueche, gleichungSummeMalSumme, gleichungSonderfaelle, nullprodukt, gleichungAusklammernNull, bruchgleichung];
+  zusammenfassenGenerator, ausmultiplizierenMonom, klammernVerschachtelt, summeMalSumme, termGleichwertig, ausklammern, binomGeometrie, binomAusmultiplizieren, binomErgaenzen, binomFaktorisieren, bruchtermMultiplizieren, bruchtermFaktorisierenKuerzen, gleichungKlammern, gleichungBrueche, gleichungSummeMalSumme, gleichungSonderfaelle, nullprodukt, gleichungAusklammernNull, bruchgleichung, formelUmstellen, ungleichung];
